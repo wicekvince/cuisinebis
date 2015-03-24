@@ -5,7 +5,9 @@ from .models import Ingredient,  Etape,  Photo,  Recette
 
 
 def index(request):
+    recettes = Recette.objects.all()
     contexte = {
+        'recettes': recettes,
 
     }
     return render(request, 'recette/index.html', contexte)
