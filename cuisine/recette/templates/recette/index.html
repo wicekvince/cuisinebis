@@ -1,0 +1,11 @@
+{% extends 'sondages/_base.html' %}
+{% block titre %}Liste des sondages{% endblock %}
+{% block contenu %}
+    <h3>Bienvenue !</h3>
+
+    <ul>
+    {% for question in questions %}
+       <li><a href="{% url 'sondages:detail' question.id %}">{{ question.texte }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

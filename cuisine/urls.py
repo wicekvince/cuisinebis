@@ -4,7 +4,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^account/login/$', 'django.contrib.auth.views.login'),
-    url(r'^account/logout/$', 'django.contrib.auth.views.logout'),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout'),
     url(r'^', include('recette.urls', namespace='recette')),
 )
