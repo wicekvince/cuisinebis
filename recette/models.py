@@ -3,7 +3,7 @@ from django.db import models
 
 class Photo(models.Model):
     recette = models.ForeignKey('Recette')
-    profile_image = models.ImageField(upload_to="photos_recettes", max_length=100)
+    image = models.ImageField(upload_to="photos_recettes", max_length=100)
 
 
 class Ingredient(models.Model):
@@ -18,6 +18,7 @@ class Etape(models.Model):
 
 
 class Recette(models.Model):
+    #slug = AutoSlugField(populate_from='titre')
     titre = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
     difficulte = models.CharField(max_length=100)

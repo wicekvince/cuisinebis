@@ -1,0 +1,44 @@
+{% extends 'recette/_base.html' %}
+{% block titre %}Liste des sondages{% endblock %}
+{% block contenu %}
+
+    <div class="recette">
+    <h1> {{ recette.titre }}</h1>
+    <span class="recette-detail">
+       Type : {{ recette.type }}
+        Cout : {{ recette.cout }}
+        difficulté : {{ recette.difficulte }}
+    </span>
+    </div>
+
+    <div class="photos">
+        {% for photo in photos %}
+            <img src="{{ photo.image.url }}"/>
+        {% endfor %}
+    </div>
+
+    <div class="etapes">
+        <ul>
+            {% for etape in etapes %}
+                <li> {{ etape.detail }}  </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="ingredients">
+        <ul>
+            {% for ingredient in ingredients %}
+                <li> {{ ingredient.nom }} {{ ingredient.quantite }}  </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="temps">
+        <ul>
+            <li>Temps de cuisson {{ recette.temps_cuisson }}h</li>
+            <li>Temps de preparation {{ recette.temps_preparation }}h</li>
+            <li>Temps de repos {{ recette.temps_repos }}h</li>
+        </ul>
+    </div>
+
+{% endblock %}
