@@ -35,7 +35,7 @@ hr {
 
 #header {
 	width: 940px;
-	height: 270px;
+	height: 250px;
 	margin: 0px auto;
 }
 
@@ -119,6 +119,7 @@ hr {
 
 #wrapper {
 	background: #EBEAD1 url(../images/img02.jpg) repeat-x left bottom;
+    padding-bottom:40px
 }
 
 #page {
