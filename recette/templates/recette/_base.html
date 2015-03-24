@@ -4,9 +4,68 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>{% block titre %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
 </head>
 <body>
-    {% block contenu %}{% endblock %}
+<div id="header">
+	<div id="logo">
+		<h1><a href="#">DominosCuisto</a></h1>
+		<p><a href="">Pas moins de <span>10</span> recettes de dinguo !</a></p>
+	</div>
+	<div id="menu">
+		<ul>
+			<li class="active"><a href="#">Accueil</a></li>
+			<li><a href="#">Les entrées</a></li>
+			<li><a href="#">Les plats</a></li>
+			<li><a href="#">Les desserts</a></li>
+		</ul>
+	</div>
+</div>
+<div id="wrapper">
+    <div id="page">
+        {% block contenu %}{% endblock %}
+    </div>
+</div>
+
+<div id="wrapper2">
+	<div id="footer">
+		<ul>
+			<li class="first">
+				<h2>Mauris vulputate dolor</h2>
+				<ul>
+					<li><a href="#">Nulla luctus eleifend purus</a></li>
+					<li><a href="#">Praesent scelerisque scelerisque erat</a></li>
+					<li><a href="#">Ut nonummy rutrum sem</a></li>
+					<li><a href="#">Pellentesque tempus quam quis nulla</a></li>
+					<li><a href="#">Fusce ultrices fringilla metus</a></li>
+					<li><a href="#">Praesent mattis condimentum nisl</a></li>
+				</ul>
+			</li>
+			<li>
+				<h2>Praesent scelerisque sceler</h2>
+				<ul>
+					<li><a href="#">Nulla luctus eleifend purus</a></li>
+					<li><a href="#">Praesent scelerisque scelerisque erat</a></li>
+					<li><a href="#">Ut nonummy rutrum sem</a></li>
+					<li><a href="#">Pellentesque tempus quam quis nulla</a></li>
+					<li><a href="#">Fusce ultrices fringilla metus</a></li>
+					<li><a href="#">Praesent mattis condimentum nisl</a></li>
+				</ul>
+			</li>
+			<li>
+				<h2>Fusce ultrices fringilla</h2>
+				<ul>
+					<li><a href="#">Nulla luctus eleifend purus</a></li>
+					<li><a href="#">Praesent scelerisque scelerisque erat</a></li>
+					<li><a href="#">Ut nonummy rutrum sem</a></li>
+					<li><a href="#">Pellentesque tempus quam quis nulla</a></li>
+					<li><a href="#">Fusce ultrices fringilla metus</a></li>
+					<li><a href="#">Praesent mattis condimentum nisl</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<p id="legal">Projet Django</p>
+</div>
 </body>
 </html>
