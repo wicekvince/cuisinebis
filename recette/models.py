@@ -18,7 +18,7 @@ class Etape(models.Model):
 
 
 class Recette(models.Model):
-    #slug = AutoSlugField(populate_from='titre')
+    #slug = models.SlugField()
     titre = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
     difficulte = models.CharField(max_length=100)

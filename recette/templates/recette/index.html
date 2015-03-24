@@ -3,4 +3,8 @@
 {% block contenu %}
     <h3>Bienvenue !</h3>
 
+    <h2>Nos recettes</h2>
+    {% for recette in recettes %}
+            <a href="{% url 'recette:recette' recette.id %} {{ recette.slug }}">{{ recette.slug }}{{ recette.titre }}</a>
+        {% endfor %}
 {% endblock %}
