@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .forms import RecetteForm
 from .models import Ingredient,  Etape,  Photo,  Recette
 
 
@@ -39,3 +40,10 @@ def recette(request, id):
         'photos'     : photos,
     }
     return render(request, 'recette/affiche-recette.html', contexte)
+
+def nouvelleRecette(request):
+    form = RecetteForm()
+    contexte = {
+        'form'    : form,
+    }
+    return render(request, 'recette/nouvelle-recette.html', contexte)
