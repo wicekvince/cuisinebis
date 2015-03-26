@@ -37,6 +37,7 @@ hr {
 	width: 940px;
 	height: 250px;
 	margin: 0px auto;
+    position: relative;;
 }
 
 /* Logo */
@@ -357,4 +358,19 @@ hr {
 
 div#wrapper{
     overflow: hidden;
+}
+
+div.account-action{position: absolute; right: 3%; top: 45%;}
+#header div.account-action > a {
+    background-color: #f7d243;
+    border-radius: 6px;
+    color: #182c33;
+    display: block;
+    float: left;
+    font-size: 11px;
+    margin: 0 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: auto;
 }
