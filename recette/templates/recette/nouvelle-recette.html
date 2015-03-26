@@ -2,6 +2,23 @@
 {% block titre %}Recette  {% endblock %}
 {% block contenu %}
 
-    {{ form }}
 
+    <div style="width: 200px">
+    {% if form.subject.errors %}
+    <ol>
+    {% for error in form.subject.errors %}
+        <li><strong>{{ error|escape }}</strong></li>
+    {% endfor %}
+    </ol>
+{% endif %}
+    <form action="{% url 'recette:ajout' %}" method="post">
+        {{ form3 }}
+    {{ form2 }}
+    {%  for forms in form %}
+   {{ forms }}
+    {% endfor %}
+    {% csrf_token %}
+    <input type="submit" />
+    </form>
+</div>
 {% endblock %}

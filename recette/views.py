@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RecetteForm
+from .forms import RecetteForm,EtapeForm
 from .models import Ingredient,  Etape,  Photo,  Recette
-
 
 def index(request):
     recettes = Recette.objects.all()
@@ -42,8 +41,24 @@ def recette(request, id):
     return render(request, 'recette/affiche-recette.html', contexte)
 
 def nouvelleRecette(request):
-    form = RecetteForm()
+
+    if request.method == "POST":
+        form = RecetteForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+        else:
+            form = RecetteForm()
+
+    from django.forms.models import inlineformset_factory
+    BookFormSet = inlineformset_factory(Recette, Etape, RecetteForm)
+    formset = BookFormSet
+    BookFormSet2 = inlineformset_factory(Recette, Ingredient, RecetteForm)
+    formset2 = BookFormSet2
+    form3 = RecetteForm
     contexte = {
-        'form'    : form,
+        'form'    : formset,
+        'form2'    : formset2,
+        'form3'    : form3,
     }
     return render(request, 'recette/nouvelle-recette.html', contexte)
