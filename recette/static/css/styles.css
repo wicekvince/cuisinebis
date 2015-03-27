@@ -1,0 +1,70 @@
+body{font-family: open sans;margin:0;background: url(../images/background.png) repeat}
+a{text-decoration: none}
+#header {
+    border-bottom: 2px solid #E87E04;
+    display: block;
+    background: url(../images/background-header.png) repeat;
+}
+
+#header-content {
+    display: block;
+    overflow: hidden;
+    margin: 0px auto;
+    width: 1000px;
+}
+#menu{
+    clear: both;
+}
+
+#menu ul {
+    list-style: outside none none;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+#menu a {
+    color: #000;
+    display: block;
+    font-size: 15px;
+    padding: 7px 20px;
+    text-decoration: none;
+}
+
+
+#menu a:hover {
+    background-color: #E87E04;
+    color: #fff;
+}
+
+
+#menu li {
+    float: left;
+    padding: 0;
+}
+#logo{
+    float: left;
+}
+#logo > span{display: block;font-style: italic;}
+#logo span >span{font-size: 25px;font-weight: 600}
+#actions{float: right;padding-top: 20px}
+img{width: 175px;}
+.account-action{
+    float: right;
+    margin-bottom: 10px;
+}
+.account-action > a {
+    background-color: #e87e04;
+    color: #fff;
+    display: block;
+    float: left;
+    margin-left: 10px;
+    padding: 7px 20px;
+}
+
+#footer{background-color: #e87e04}
+#footer-content{color:#fff;width: 1000px; margin:0 auto;height:200px}
+#post-footer{background-color:#96281b;color: #fff;padding: 10px;}
+#post-footer-content{width: 1000px;margin: 0 auto;text-align: center}
+#main{}
+#page{width: 1000px;margin: 0 auto;padding: 20px}
