@@ -63,8 +63,16 @@ img{width: 175px;}
 }
 
 #footer{background-color: #e87e04}
-#footer-content{color:#fff;width: 1000px; margin:0 auto;height:200px}
+#footer-content{font-size:13px;color:#fff;width: 1000px; margin:0 auto;height:200px}
+#footer-content h4{padding-bottom:10px;border-bottom: 1px solid #fff}
 #post-footer{background-color:#96281b;color: #fff;padding: 10px;}
-#post-footer-content{width: 1000px;margin: 0 auto;text-align: center}
+#post-footer-content{font-size:13px;width: 1000px;margin: 0 auto;text-align: center}
+
 #main{}
 #page{width: 1000px;margin: 0 auto;padding: 20px}
+#footer-content > div {
+    float: left;
+    overflow: hidden;
+    width: 32%;
+}
+.center-footer{margin: 0 20px}
