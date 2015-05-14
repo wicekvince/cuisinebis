@@ -1,8 +1,12 @@
 {% extends "recette/_base.html" %}
 {% block contenu %}
-    <form method="post" action="{% url 'recette:register' %}">
+    <h1>Mes informations personnelles</h1>
+     <form id="registration_form" class="form" method="post" action="{% url 'recette:register' %}">
         {% csrf_token %}
-        {{ formulaire }}
-        <input type="submit" value="Submit !"/>
+        <fieldset class="form-group">
+            {{ formulaire.as_p }}
+        </fieldset>
+         <span class="required-field-message">Champs obligatoires <span>*</span></span>
+        <input type="submit" class="btn btn-primary" value="Créez votre compte"/>
     </form>
 {% endblock %}

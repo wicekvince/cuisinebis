@@ -1,27 +1,30 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RecetteForm,EtapeForm
+from .forms import RecetteForm,EtapeForm,RegistrationForm
 from .models import Ingredient,  Etape,  Photo,  Recette
+from django import template
+
 
 def index(request):
     recettes = Recette.objects.all()
     contexte = {
         'recettes': recettes,
-
     }
     return render(request, 'recette/index.html', contexte)
 
 
 def register(request):
     if (request.method == 'POST'):
-        user_form = UserCreationForm(request.POST    )
+        user_form = RegistrationForm(request.POST)
         if user_form.is_valid():
-            user = User.objects.create_user(request.POST['username'],'',request.POST['password1'])
+            user = User.objects.create_user(request.POST['username'],request.POST['email'],request.POST['password1'])
+            user.first_name = request.POST['first_name']
+            user.last_name = request.POST['last_name']
             user.save()
             return redirect('recette:index')
     else:
-        user_form = UserCreationForm()
+        user_form = RegistrationForm()
     contexte = {
         'formulaire': user_form,
     }
