@@ -20,6 +20,10 @@
             <div class="account-header">
                 <div>
                     <a id="logo" href="{% url 'recette:index' %}"><img src="../../static/images/logo.png" alt="" title="" border="0"></a>
+                    <form method="get" action="{% url 'recette:search' %}">
+                        <input type="text" id="search_query" name="search_query" placeholder="Steak, pizza...">
+                        <input type="submit" Value="Go"/>
+                    </form>
                     <div class="account-action">
                         {% if user.is_authenticated %}
                             <a href="{% url 'logout' %}">Déconnexion</a>

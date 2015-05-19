@@ -66,7 +66,7 @@ margin:auto;
     position: relative;
 }
 #logo{
-    float:left;margin-top: 4px;
+    display:inline-block;vertical-align: middle;  margin-right: 150px;
 }
 #logo img{max-width:200px}
 /*----------------------menu-------------------------*/
@@ -154,20 +154,20 @@ a:hover{
 }
 #main{padding: 10px 20px 30px 20px;background-color: #fff}
 h1{margin:0 0 10px 0 !important}
-form{overflow: hidden;}
-form label{width: 240px;}
-form input{float: left;margin-right: 10px; width: 250px;}
-form input[type="submit"]{display: block;float: none; margin: 15px auto 0 auto!important;width: 450px;}
-form p{clear: both;overflow:hidden}
-form .helptext{float: left; width: 300px;font-size: 12px}
-form .errorlist {background-color: #FA482E;color: #fff;list-style: outside none none;padding: 3px 10px;}
+.form{overflow: hidden;}
+.form label{width: 240px;}
+.form input{float: left;margin-right: 10px; width: 250px;}
+.form input[type="submit"]{display: block;float: none; margin: 15px auto 0 auto!important;width: 450px;}
+.form p{clear: both;overflow:hidden}
+.form .helptext{float: left; width: 300px;font-size: 12px}
+.form .errorlist {background-color: #FA482E;color: #fff;list-style: outside none none;padding: 3px 10px;}
 .btn-primary{background-color: #097168 !important;}
-form .required > label::after {color: #FA482E; content: " *";font-size: 20px;}
+.form .required > label::after {color: #FA482E; content: " *";font-size: 20px;}
 .required-field-message{display: block;text-align: right;}
 .required-field-message span{color: #FA482E;font-size: 20px;}
 .bxslider{padding: 0;}
 .account-header{background-color: #34393E;overflow:hidden}
-.account-header > div {
+.account-header > div {    padding: 3px 0;
     margin: auto;
     overflow: hidden;
     width: 900px;
@@ -192,7 +192,7 @@ form .required > label::after {color: #FA482E; content: " *";font-size: 20px;}
     padding: 7px 15px 0;
     text-align: center;
 }
-.account-action{height: 70px;float:right;padding-top: 20px}
+.account-action{display: inline-block;vertical-align: middle}
 .account-action > a {
     float: left;
     margin: 0 16px;
@@ -200,3 +200,30 @@ form .required > label::after {color: #FA482E; content: " *";font-size: 20px;}
 .account-action > a:hover{
     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(255, 87, 34, 1) 0px, rgba(255, 95, 45, 1) 100%) !important;
 }
+.account-header form{position:relative;display: inline-block;vertical-align: middle}
+.account-header input[type="text"]{ border: 0 none;
+    border-radius: 5px;
+    color: #575757;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px;}
+.account-header input[type="submit"] {
+    background: url("../images/search.png") no-repeat 0 0 / 60%;
+    border: 0 none;
+    font-size: 18px;
+    font-weight: 800;
+    height: 100%;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    position: absolute;
+    right: -13px;
+    text-indent: -9999px;
+    text-transform: uppercase;
+    top: 3px;
+    width: 45px;
+}
+.search-filter form{text-align: right}
+.search-filter span{display: inline-block;vertical-align: middle;margin-right: 30px}
+.search-filter select{margin-right: 30px;display: inline-block;vertical-align: middle}
+.search-filter input{display: inline-block;vertical-align: middle;padding: 5px 40px}

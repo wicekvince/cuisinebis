@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import RecetteForm,EtapeForm,RegistrationForm
 from .models import Ingredient,  Etape,  Photo,  Recette
 from django import template
-
+import pprint
 
 def index(request):
     recettes = Recette.objects.all()
@@ -65,3 +65,20 @@ def nouvelleRecette(request):
         'form3'    : form3,
     }
     return render(request, 'recette/nouvelle-recette.html', contexte)
+
+def search(request):
+    query = request.GET.get('search_query')
+    if request.GET.get('orderby') and request.GET.get('orderway'):
+        orderby = request.GET.get('orderby')
+        orderway = request.GET.get('orderway')
+        if orderway == 'desc':
+            results = User.objects.filter(username__contains=query).order_by('-' + orderby)
+        elif orderway == 'asc':
+            results = User.objects.filter(username__contains=query).order_by(orderby)
+    else :
+        results = User.objects.filter(username__contains=query)
+    contexte = {
+        'query': query,
+        'results' : results
+    }
+    return render(request, 'search/search_result.html', contexte)
