@@ -2,7 +2,7 @@ body {
 background: url(../images/background.png) repeat;
 margin:0px;
 padding:0px;
-font: 10px  verdana, arial, helvetica;
+font: 10px  Arial,Helvetica,sans-serif;
 color: #416271;
 }
 h1{
@@ -60,28 +60,30 @@ height:auto;
 margin:auto;
 }
 #header{
-width:900px;
+width:100%;
 height:auto;
 margin:auto;
     position: relative;
 }
 #logo{
-    display: block;
-    float: none;
-    margin: 0 auto;
-    padding: 20px 0;
+    float:left
 }
-#logo img{display: block; margin: auto;}
+#logo img{max-width:200px}
 /*----------------------menu-------------------------*/
 #menu{
-width:900px;
+width:100%;
 height:42px;
 padding:0px;
 clear:both;
-background-color:#043227;
+background-color:#ff5722;    letter-spacing: 0.5px;    text-transform: uppercase;font-weight: 600;
 }
-#menu ul{
-list-style:none;margin: auto;display:block;
+#menu ul {
+    display: block;
+    list-style: outside none none;
+    margin: auto;
+    overflow: hidden;
+    padding: 0;
+    width: 900px;
 }
 #menu ul li{
 list-style:none;display:inline;float:left;width:auto;height:42px;line-height:42px; font-family:Arial, Helvetica, sans-serif; font-size:15px;
@@ -145,18 +147,6 @@ padding-left:10px;
 text-decoration:underline;
 color: #fff;
 }
-.account-action{display: block;
-    float: right;
-    position: absolute;
-    right: 40px;
-    top: 50px;}
-
-.account-action > a {
-    background-color: #043227;
-    color: #fff;
-    margin: 0 5px;
-    padding: 7px 23px;
-}
 
 a:hover{
     color:#fff !important;
@@ -176,3 +166,36 @@ form .required > label::after {color: #FA482E; content: " *";font-size: 20px;}
 .required-field-message{display: block;text-align: right;}
 .required-field-message span{color: #FA482E;font-size: 20px;}
 .bxslider{padding: 0;}
+.account-header{background-color: #34393E;overflow:hidden}
+.account-header > div {
+    margin: auto;
+    overflow: hidden;
+    width: 900px;
+}
+.pre-header{background-color: #fff}
+.pre-header > div {
+    color: #868686;
+    font-weight: 600;
+    margin: auto;
+    padding:3px 0px 3px 0;
+    width: 900px;
+}
+#header .account-header a {
+    border-radius: 5px;
+    border-top: 1px solid #5e5e5e;
+    color: #fff;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    height: 35px;
+    padding: 7px 15px 0;
+    text-align: center;
+}
+.account-action{height: 70px;float:right;padding-top: 20px}
+.account-action > a {
+    float: left;
+    margin: 0 16px;
+}
+.account-action > a:hover{
+    background-color: #ff5722 ;
+}
