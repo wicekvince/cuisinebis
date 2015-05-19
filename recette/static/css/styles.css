@@ -66,7 +66,7 @@ margin:auto;
     position: relative;
 }
 #logo{
-    float:left
+    float:left;margin-top: 4px;
 }
 #logo img{max-width:200px}
 /*----------------------menu-------------------------*/
@@ -180,7 +180,8 @@ form .required > label::after {color: #FA482E; content: " *";font-size: 20px;}
     padding:3px 0px 3px 0;
     width: 900px;
 }
-#header .account-header a {
+#header .account-action a {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(41, 41, 41, 1) 0px, rgba(54, 54, 54, 1) 100%);
     border-radius: 5px;
     border-top: 1px solid #5e5e5e;
     color: #fff;
@@ -197,5 +198,5 @@ form .required > label::after {color: #FA482E; content: " *";font-size: 20px;}
     margin: 0 16px;
 }
 .account-action > a:hover{
-    background-color: #ff5722 ;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(255, 87, 34, 1) 0px, rgba(255, 95, 45, 1) 100%) !important;
 }
