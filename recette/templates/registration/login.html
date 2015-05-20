@@ -2,25 +2,16 @@
 {% block titre %}Authentification{% endblock %}
 {% block contenu %}
 
+<form method="post" class="form" action="{% url 'django.contrib.auth.views.login' %}?next=">
 {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+    <p class="errorlist">Votre identifiant et votre mot de passe de matche pas. Merci de vérifier vos informations.</p>
 {% endif %}
+    {% csrf_token %}
 
-<form method="post" action="{% url 'django.contrib.auth.views.login' %}?next=">
-{% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
+    {{ form.as_p }}
 
-<input type="submit" class="btn btn-primary" value="Se connecter" />
-<input type="hidden" name="next" value="{{ next }}" />
+    <input type="submit" class="btn btn-primary" value="Se connecter" />
+    <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
 {% endblock %}

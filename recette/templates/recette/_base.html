@@ -14,16 +14,21 @@
         <div id="header" class="row">
             <div class="pre-header">
                 <div>
-                    8767826373 recettes en lignes !
+                        8767826373 recettes en lignes !
+                    <div class="user-infos">
+                        {% if user.is_authenticated %}
+                                {{ user.last_name }}
+                                {{ user.first_name }}
+                            {% else %}
+                            Connectez-vous !
+                        {% endif %}
+                    </div>
                 </div>
             </div>
             <div class="account-header">
                 <div>
-                    <a id="logo" href="{% url 'recette:index' %}"><img src="../../static/images/logo.png" alt="" title="" border="0"></a>
-                    <form method="get" action="{% url 'recette:search' %}">
-                        <input type="text" id="search_query" name="search_query" placeholder="Steak, pizza...">
-                        <input type="submit" Value="Go"/>
-                    </form>
+                    <a id="logo" href="{% url 'recette:index' %}"><img src="../../static/images/logo.png" alt="" title=""></a>
+                    {% include "search/search_form.html" %}
                     <div class="account-action">
                         {% if user.is_authenticated %}
                             <a href="{% url 'logout' %}">Déconnexion</a>
@@ -31,8 +36,6 @@
                             <a href="{% url 'recette:register' %}" style="">S'enregistrer</a>
                             <a href="{% url 'login' %}">Connexion</a>
                         {% endif %}
-                    {{ user.full_name }}
-                    {{ user.first_name }}
                     </div>
                 </div>
             </div>
@@ -46,27 +49,32 @@
             </div>
         </div>
         <div id="main_container">
-
+        <!--
             <div class="green_box">
                 <ul class="bxslider clock">
                     <li><img src="../../static/images/slider/pizza.jpg" alt="" title=""></li>
                     <li><img src="../../static/images/slider/dinner.jpg" alt="" title=""></li>
                     <li><img src="../../static/images/slider/fruits.jpg" alt="" title=""></li>
                 </ul>
-            </div>
+            </div> -->
             <div id="main">
                 <div id="page">
                     {% block contenu %}{% endblock %}
                 </div>
             </div>
-            <div id="footer">
-                <div class="copyright">
-                    <a href="home.html"><img src="images/footer_logo.gif" alt="" title="" border="0"></a>
+        </div>
+        <div id="footer">
+            <div>
+                <div class="message">
+                    <span>Site universitaire</span>
                 </div>
                 <div class="footer_links">
-                    <a href="#">About us</a>
-                    <a href="#">Privacy policy</a>
-                    <a href="#">Contact us </a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}">Déconnexion</a>
+                    {% else %}
+                        <a href="{% url 'recette:register' %}" style="">S'enregistrer</a>
+                        <a href="{% url 'login' %}">Connexion</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
