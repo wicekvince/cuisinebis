@@ -36,8 +36,8 @@ DIFF_CHOICES = (
 class Recette(models.Model):
     user = models.ForeignKey(User)
     titre = models.CharField(max_length=100)
-    type = models.CharField(max_length=100, choices=TYPE_CHOICES)
-    difficulte = models.CharField(max_length=100, choices=DIFF_CHOICES)
+    type = models.IntegerField(choices=TYPE_CHOICES)
+    difficulte = models.IntegerField(choices=DIFF_CHOICES)
     cout = models.FloatField()
     temps_preparation = models.IntegerField()
     temps_cuisson = models.IntegerField()
