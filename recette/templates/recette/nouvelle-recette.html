@@ -3,7 +3,7 @@
 {% block contenu %}
 
 
-    <div style="width: 200px">
+    <div style="">
     {% if form.subject.errors %}
     <ol>
     {% for error in form.subject.errors %}
@@ -12,11 +12,10 @@
     </ol>
 {% endif %}
     <form action="{% url 'recette:ajout' %}" method="post">
-        {{ form3 }}
-    {{ form2 }}
-    {%  for forms in form %}
-   {{ forms }}
-    {% endfor %}
+
+        {{ form3.as_p }}
+        {{ form.as_p }}
+        {{ form2.as_p }}
     {% csrf_token %}
     <input type="submit" />
     </form>
