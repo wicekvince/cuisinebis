@@ -1,13 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RecetteForm,EtapeForm,RegistrationForm
+from .forms import RecetteForm,EtapeForm,RegistrationForm,IngredientForm
 from .models import Ingredient,  Etape,  Photo,  Recette
 from django import template
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import pprint
 from django.forms.models import inlineformset_factory
 from django.forms.formsets import formset_factory
+
+
 
 def index(request):
     recettes = Recette.objects.all()
