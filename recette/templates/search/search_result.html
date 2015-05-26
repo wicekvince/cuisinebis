@@ -5,18 +5,14 @@
         <form method="GET" action="{% url 'recette:search' %}">
             <span>Trier par : </span>
             <select name="orderby" class="">
-                <!--<option value="">Titre de la recette</option>
-                <option value="">Note moyenne</option>
-                <option value="">Difficulté</option>
-                <option value="">Temps de préparation</option>-->
-                <option value="titre">Titre</option>
-                <option value="note">Note moyenne</option>
-                <option value="difficulte">Difficulté</option>
-                <option value="temps_preparation">Temps de préparations</option>
+                <option {% if orderby == 'titre' %} selected="selected"{% endif %} value="titre">Titre</option>
+                <option {% if orderby == 'note' %} selected="selected"{% endif %} value="note">Note moyenne</option>
+                <option {% if orderby == 'difficulte' %} selected="selected"{% endif %}value="difficulte">Difficulté</option>
+                <option {% if orderby == 'temps_preparation' %} selected="selected"{% endif %}value="temps_preparation">Temps de préparations</option>
             </select>
             <select name="orderway" class="">
-                <option value="asc">Croissant</option>
-                <option value="desc">Décroissant</option>
+                <option {% if orderway == 'asc' %} selected="selected"{% endif %} value="asc">Croissant</option>
+                <option {% if orderway == 'desc' %} selected="selected"{% endif %} value="desc">Décroissant</option>
             </select>
             <input type="hidden" value="{{ query }}" name="search_query"/>
             <input class="btn btn-success" type="submit" value="Filtrer" />

@@ -68,6 +68,8 @@ def nouvelleRecette(request):
 
 def search(request):
     query = request.GET.get('search_query')
+    orderby = ''
+    orderway = ''
     if request.GET.get('orderby') and request.GET.get('orderway'):
         orderby = request.GET.get('orderby')
         orderway = request.GET.get('orderway')
@@ -78,6 +80,8 @@ def search(request):
     else :
         results = Recette.objects.filter(titre__contains=query).select_related()
     contexte = {
+        'orderby': orderby,
+        'orderway': orderway,
         'query': query,
         'results' : results
     }
