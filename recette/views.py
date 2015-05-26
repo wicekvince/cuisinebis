@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import RecetteForm,EtapeForm,RegistrationForm
 from .models import Ingredient,  Etape,  Photo,  Recette
 from django import template
-import pprint
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def index(request):
     recettes = Recette.objects.all()
@@ -68,16 +68,31 @@ def nouvelleRecette(request):
 
 def search(request):
     query = request.GET.get('search_query')
+    orderby = ''
+    orderway = ''
     if request.GET.get('orderby') and request.GET.get('orderway'):
         orderby = request.GET.get('orderby')
         orderway = request.GET.get('orderway')
         if orderway == 'desc':
-            results = User.objects.filter(username__contains=query).order_by('-' + orderby)
+            results = Recette.objects.filter(titre__contains=query).order_by('-' + orderby).select_related()
         elif orderway == 'asc':
-            results = User.objects.filter(username__contains=query).order_by(orderby)
+            results = Recette.objects.filter(titre__contains=query).order_by(orderby).select_related()
     else :
-        results = User.objects.filter(username__contains=query)
+        results = Recette.objects.filter(titre__contains=query).select_related()
+    paginator = Paginator(results, 10)
+    page = request.GET.get('page')
+    try:
+        results = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        results = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        results = paginator.page(paginator.num_pages)
     contexte = {
+        'page': page,
+        'orderby': orderby,
+        'orderway': orderway,
         'query': query,
         'results' : results
     }
