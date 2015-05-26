@@ -150,8 +150,12 @@ color: #fff;
 }
 
 a:hover{
-    color:#fff !important;
+    color:#fff;
     text-decoration: none !important;
+}
+.pagination a:hover{
+    color: #097168;
+    text-decoration: underline;
 }
 #main{padding: 10px 20px 30px 20px;background-color: #fff}
 h1{margin:0 0 10px 0 !important}

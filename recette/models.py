@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Photo(models.Model):
@@ -33,7 +34,7 @@ DIFF_CHOICES = (
 
 
 class Recette(models.Model):
-    #slug = models.SlugField()
+    user = models.ForeignKey(User)
     titre = models.CharField(max_length=100)
     type = models.CharField(max_length=100, choices=TYPE_CHOICES)
     difficulte = models.CharField(max_length=100, choices=DIFF_CHOICES)
@@ -41,7 +42,18 @@ class Recette(models.Model):
     temps_preparation = models.IntegerField()
     temps_cuisson = models.IntegerField()
     temps_repos = models.IntegerField()
-    note = models.FloatField()
 
     def __str__(self):
         return self.titre
+
+
+class Note(models.Model):
+    recette = models.ForeignKey('Recette')
+    user = models.ForeignKey(User)
+    note = models.IntegerField()
+
+
+class Commentaire(models.Model):
+    recette = models.ForeignKey('Recette')
+    user = models.ForeignKey(User)
+    message = models.TextField()

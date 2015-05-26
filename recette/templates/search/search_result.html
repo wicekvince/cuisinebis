@@ -48,15 +48,15 @@
     <div class="pagination">
         <span class="step-links">
             {% if results.has_previous %}
-                <a href="?search_query={{ query }}&orderby={{ orderby }}&orderway={{ orderway }}&page={{ results.previous_page_number }}">previous</a>
+                <a href="?search_query={{ query }}&orderby={{ orderby }}&orderway={{ orderway }}&page={{ results.previous_page_number }}">Résultats précédent</a>
             {% endif %}
 
             <span class="current">
-                Page {{ results.number }} of {{ results.paginator.num_pages }}.
+                Page {{ results.number }} de {{ results.paginator.num_pages }}
             </span>
 
             {% if results.has_next %}
-                <a href="?search_query={{ query }}&orderby={{ orderby }}&orderway={{ orderway }}&page={{ results.next_page_number }}">next</a>
+                <a href="?search_query={{ query }}&orderby={{ orderby }}&orderway={{ orderway }}&page={{ results.next_page_number }}">Résultats suivant</a>
             {% endif %}
         </span>
     </div>
