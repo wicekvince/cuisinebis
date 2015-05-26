@@ -35,7 +35,7 @@
             {% for result in results %}
                 <tr>
                     <td>
-                    <img src="{% for photo in result.photo_set.all %}{{ photo.image.url }}{% endfor %}" alt="" /></td>
+                    <img src="{% if result.photo_set.all %}{% for photo in result.photo_set.all %}{% if forloop.counter == 1%}{{ photo.image.url }}{% endif %}{% endfor %}{% else %}{{ STATIC_URL }}images/no-image.png{% endif %}" alt="" /></td>
                     <td>{{ result.titre }}</td>
                     <td>{{ result.difficulte }}</td>
                     <td></td>
@@ -44,4 +44,19 @@
             {% endfor %}
         </tbody>
     </table>
+    <div class="pagination">
+        <span class="step-links">
+            {% if results.has_previous %}
+                <a href="{{ current_url }}&page={{ results.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ results.number }} of {{ results.paginator.num_pages }}.
+            </span>
+
+            {% if results.has_next %}
+                <a href="{{ current_url }}&page={{ results.next_page_number }}">next</a>
+            {% endif %}
+        </span>
+    </div>
 {% endblock %}
