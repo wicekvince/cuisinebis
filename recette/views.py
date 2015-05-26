@@ -72,11 +72,11 @@ def search(request):
         orderby = request.GET.get('orderby')
         orderway = request.GET.get('orderway')
         if orderway == 'desc':
-            results = User.objects.filter(username__contains=query).order_by('-' + orderby)
+            results = Recette.objects.filter(titre__contains=query).order_by('-' + orderby).select_related()
         elif orderway == 'asc':
-            results = User.objects.filter(username__contains=query).order_by(orderby)
+            results = Recette.objects.filter(titre__contains=query).order_by(orderby).select_related()
     else :
-        results = User.objects.filter(username__contains=query)
+        results = Recette.objects.filter(titre__contains=query).select_related()
     contexte = {
         'query': query,
         'results' : results
