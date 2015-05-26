@@ -31,6 +31,7 @@ DIFF_CHOICES = (
     (3, 'Recette difficile'),
 )
 
+
 class Recette(models.Model):
     #slug = models.SlugField()
     titre = models.CharField(max_length=100)
