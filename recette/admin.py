@@ -9,6 +9,9 @@ class EtapeAdmin(admin.StackedInline):
 class IngredientAdmin(admin.StackedInline):
     model = Ingredient
 
+class IngredientAdmin2(admin.ModelAdmin):
+    model = Ingredient
+
 
 class PhotoAdmin(admin.StackedInline):
     model = Photo
@@ -18,4 +21,11 @@ class RecetteAdmin(admin.ModelAdmin):
     inlines = [ EtapeAdmin,IngredientAdmin,PhotoAdmin ]
 
 
+class IngredientAdmin(admin.ModelAdmin):
+    inlines = [ IngredientAdmin2 ]
+
+
+
+
 admin.site.register(Recette, RecetteAdmin)
+admin.site.register(Ingredient, IngredientAdmin2)

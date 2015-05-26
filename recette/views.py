@@ -5,11 +5,16 @@ from .forms import RecetteForm,EtapeForm,RegistrationForm
 from .models import Ingredient,  Etape,  Photo,  Recette
 from django import template
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import pprint
+from django.forms.models import inlineformset_factory
+from django.forms.formsets import formset_factory
 
 def index(request):
     recettes = Recette.objects.all()
+    nb = recettes.count()
     contexte = {
         'recettes': recettes,
+        'nb' : nb
     }
     return render(request, 'recette/index.html', contexte)
 
@@ -47,22 +52,23 @@ def nouvelleRecette(request):
 
     if request.method == "POST":
         form = RecetteForm(request.POST)
+        formEtape = EtapeForm(request.POST)
+        formRecette = IngredientForm(request.POST)
         if form.is_valid():
             form.save()
+        if formEtape.is_valid():
+            formEtape.save()
+        if formRecette.is_valid():
+            formRecette.save()
 
-        else:
-            form = RecetteForm()
+    form = RecetteForm();
+    EtapeFormSet = inlineformset_factory(Recette,Etape, RecetteForm)
+    IngredientFormSet2 = inlineformset_factory(Recette,Ingredient, RecetteForm)
 
-    from django.forms.models import inlineformset_factory
-    BookFormSet = inlineformset_factory(Recette, Etape, RecetteForm)
-    formset = BookFormSet
-    BookFormSet2 = inlineformset_factory(Recette, Ingredient, RecetteForm)
-    formset2 = BookFormSet2
-    form3 = RecetteForm
     contexte = {
-        'form'    : formset,
-        'form2'    : formset2,
-        'form3'    : form3,
+        'form'    : form,
+        'form2'    : EtapeFormSet,
+        'form3'    : IngredientFormSet2,
     }
     return render(request, 'recette/nouvelle-recette.html', contexte)
 
