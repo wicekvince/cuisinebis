@@ -14,6 +14,7 @@
                 <option {% if orderway == 'asc' %} selected="selected"{% endif %} value="asc">Croissant</option>
                 <option {% if orderway == 'desc' %} selected="selected"{% endif %} value="desc">Décroissant</option>
             </select>
+            <input type="hidden" name="page" value="{{ page }}" />
             <input type="hidden" value="{{ query }}" name="search_query"/>
             <input class="btn btn-success" type="submit" value="Filtrer" />
         </form>
@@ -47,7 +48,7 @@
     <div class="pagination">
         <span class="step-links">
             {% if results.has_previous %}
-                <a href="{{ current_url }}&page={{ results.previous_page_number }}">previous</a>
+                <a href="?search_query={{ query }}&orderby={{ orderby }}&orderway={{ orderway }}&page={{ results.previous_page_number }}">previous</a>
             {% endif %}
 
             <span class="current">
@@ -55,7 +56,7 @@
             </span>
 
             {% if results.has_next %}
-                <a href="{{ current_url }}&page={{ results.next_page_number }}">next</a>
+                <a href="?search_query={{ query }}&orderby={{ orderby }}&orderway={{ orderway }}&page={{ results.next_page_number }}">next</a>
             {% endif %}
         </span>
     </div>

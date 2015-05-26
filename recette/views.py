@@ -90,7 +90,7 @@ def search(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         results = paginator.page(paginator.num_pages)
     contexte = {
-        'current_url': request.get_full_path(),
+        'page': page,
         'orderby': orderby,
         'orderway': orderway,
         'query': query,
