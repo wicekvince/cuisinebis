@@ -17,11 +17,25 @@ class Etape(models.Model):
     detail = models.CharField(max_length=100)
 
 
+
+TYPE_CHOICES = (
+    (1, 'Entrée'),
+    (2, 'Plat'),
+    (3, 'Déssert'),
+    (4, 'Apéro'),
+)
+
+DIFF_CHOICES = (
+    (1, 'Recette Facile'),
+    (2, 'Difficulté moyenne'),
+    (3, 'Recette difficile'),
+)
+
 class Recette(models.Model):
     #slug = models.SlugField()
     titre = models.CharField(max_length=100)
-    type = models.CharField(max_length=100)
-    difficulte = models.CharField(max_length=100)
+    type = models.CharField(max_length=100, choices=TYPE_CHOICES)
+    difficulte = models.CharField(max_length=100, choices=DIFF_CHOICES)
     cout = models.FloatField()
     temps_preparation = models.IntegerField()
     temps_cuisson = models.IntegerField()
