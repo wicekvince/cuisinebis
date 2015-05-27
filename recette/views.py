@@ -1,16 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RecetteForm,EtapeForm,RegistrationForm,IngredientForm
-from .models import Ingredient,  Etape,  Photo,  Recette, Type
+from .forms import RecetteForm,EtapeForm,RegistrationForm,IngredientForm, CommentaireForm, NoteForm
+from .models import Ingredient,  Etape,  Photo,  Recette, Note, Commentaire
 from django import template
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import pprint
 from django.forms.models import inlineformset_factory
 from django.forms.formsets import formset_factory
+from django.db.models import Avg
 
 TYPE_CHOICES = ['1','2','3','4'];
-
 
 def index(request):
 
@@ -25,6 +25,7 @@ def index(request):
     contexte = {
         'recettes': recettes,
         'nb' : nb
+
     }
     return render(request, 'recette/index.html', contexte)
 
@@ -46,15 +47,41 @@ def register(request):
     return render(request, 'registration/register.html', contexte)
 
 def recette(request, id):
+
+    if (request.method == 'POST'):
+        com_form = CommentaireForm(request.POST)
+        note_form = NoteForm(request.POST)
+        #add default user and recette TODO
+        note_form.user = 1
+        note_form.recette = id
+        com_form.user = 1
+        com_form.recette = id
+        if com_form.is_valid():
+            com_form.save()
+        if note_form.is_valid():
+            note_form.save()
+
+
     recette = Recette.objects.get(id=id)
     etapes = Etape.objects.filter(recette=id)
     ingredients = Ingredient.objects.filter(recette=id)
     photos = Photo.objects.filter(recette=id)
+    note = Note.objects.filter(recette=id).aggregate(Avg('note'))
+    noted = Note.objects.filter(recette=id).count()
+    form_note = ''
+    if noted == 0:
+        form_note = NoteForm();
+    commentaires = Commentaire.objects.filter(recette=id)
+    form_com = CommentaireForm();
     contexte = {
         'recette'    : recette,
         'etapes'     : etapes,
         'ingredients': ingredients,
         'photos'     : photos,
+        'note'     : note,
+        'commentaires'     : commentaires,
+        'form_note': form_note,
+        'form_com': form_com,
     }
     return render(request, 'recette/affiche-recette.html', contexte)
 
@@ -83,6 +110,7 @@ def nouvelleRecette(request):
     return render(request, 'recette/nouvelle-recette.html', contexte)
 
 def search(request):
+
     query = request.GET.get('search_query')
     orderby = ''
     orderway = ''
@@ -113,12 +141,3 @@ def search(request):
         'results' : results
     }
     return render(request, 'search/search_result.html', contexte)
-
-
-def mes_recettes(request):
-    if request.user.is_authenticated():
-        results = Recette.objects.filter(user_id=request.user.id)
-    contexte = {
-        'results': results
-    }
-    return render(request, 'recette/mes_recettes.html', contexte)

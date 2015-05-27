@@ -41,4 +41,41 @@
         </ul>
     </div>
 
+
+    <div class="note">
+        <ul>
+                <li> Note moyenne :{{ note.note__avg }}  </li>
+
+        </ul>
+    </div>
+    <div class="commentaire">
+        <ul>
+            {% for com in commentaires %}
+                <li> {{ com.user }} dit:
+                 {{ com.message }}  </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="form_note">
+    {% if form_note %}
+         <form action="/" method="post">
+        {{ form_note }}
+        {% csrf_token %}
+         <input type="submit" value="Noter">
+        </form>
+    {% endif %}
+    </div>
+
+    <div class="form_com">
+    {% if form_com %}
+        <form action="/" method="post">
+        {{ form_com }}
+        {% csrf_token %}
+         <input type="submit" value="Commenter">
+        </form>
+    {% else %}
+        Vous avez déjà voté !
+    {% endif %}
+    </div>
 {% endblock %}

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Recette, Etape, Ingredient
+from .models import Recette, Etape, Ingredient , Note, Commentaire
 from django.forms.models import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -20,6 +20,16 @@ class IngredientForm(forms.ModelForm):
 
 RecetteIngredientFormset = inlineformset_factory(Recette, Ingredient)
 
+
+class NoteForm(forms.ModelForm):
+    class Meta:
+        model = Note
+        fields = ['note']
+
+class CommentaireForm(forms.ModelForm):
+    class Meta:
+        model = Commentaire
+        fields = ['message']
 
 class TestForm(forms.Form):
     nom = forms.CharField(max_length=100)
