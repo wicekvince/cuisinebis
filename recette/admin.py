@@ -1,11 +1,16 @@
 from django.contrib import admin
-from .models import Recette,  Ingredient,  Etape,  Photo
+from .models import Recette,  Ingredient,  Etape,  Photo, Note, Commentaire
 from django.contrib.auth.models import User
 
 
 class EtapeAdmin(admin.StackedInline):
     model = Etape
 
+class NoteAdmin(admin.ModelAdmin):
+    model = Note
+
+class CommentaireAdmin(admin.ModelAdmin):
+    model = Commentaire
 
 class IngredientAdmin(admin.StackedInline):
     model = Ingredient
@@ -29,4 +34,6 @@ class IngredientAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Recette, RecetteAdmin)
+admin.site.register(Commentaire, CommentaireAdmin)
+admin.site.register(Note, NoteAdmin)
 admin.site.register(Ingredient, IngredientAdmin2)
