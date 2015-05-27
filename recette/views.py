@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RecetteForm,EtapeForm,RegistrationForm,IngredientForm
-from .models import Ingredient,  Etape,  Photo,  Recette
+from .models import Ingredient,  Etape,  Photo,  Recette, Type
 from django import template
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import pprint
@@ -10,6 +10,8 @@ from django.forms.models import inlineformset_factory
 from django.forms.formsets import formset_factory
 
 
+def menu(request):
+      return {'types': Type.objects.all()}
 
 def index(request):
     recettes = Recette.objects.all()
@@ -105,3 +107,12 @@ def search(request):
         'results' : results
     }
     return render(request, 'search/search_result.html', contexte)
+
+
+def mes_recettes(request):
+    if request.user.is_authenticated():
+        results = Recette.objects.filter(user_id=request.user.id)
+    contexte = {
+        'results': results
+    }
+    return render(request, 'recette/mes_recettes.html', contexte)

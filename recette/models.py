@@ -18,6 +18,13 @@ class Etape(models.Model):
     detail = models.CharField(max_length=100)
 
 
+class Type(models.Model):
+    title = models.CharField(max_length=256)
+    label = models.CharField(max_length=100,default='Label')
+    detail = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.title
 
 TYPE_CHOICES = (
     (1, 'Entrée'),
@@ -35,8 +42,8 @@ DIFF_CHOICES = (
 
 class Recette(models.Model):
     user = models.ForeignKey(User)
+    type = models.ForeignKey('Type')
     titre = models.CharField(max_length=100)
-    type = models.IntegerField(choices=TYPE_CHOICES)
     difficulte = models.IntegerField(choices=DIFF_CHOICES)
     cout = models.FloatField()
     temps_preparation = models.IntegerField()

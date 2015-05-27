@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from .views import index, recette, register, nouvelleRecette, search
+from .views import index, recette, register, nouvelleRecette, search, mes_recettes
 
 
 urlpatterns = patterns('',
@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     url(r'^ajouter$', nouvelleRecette, name="ajout"),
     url(r'^account/register/$', register, name='register'),
     url(r'^search_result/$', search, name='search'),
+    url(r'^mes_recettes/$', mes_recettes, name='mesrecettes')
 )
 
 
