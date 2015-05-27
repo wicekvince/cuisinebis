@@ -9,13 +9,19 @@ import pprint
 from django.forms.models import inlineformset_factory
 from django.forms.formsets import formset_factory
 
+TYPE_CHOICES = ['1','2','3','4'];
 
-def menu(request):
-      return {'types': Type.objects.all()}
 
 def index(request):
-    recettes = Recette.objects.all()
+
+    recettes = Recette.objects.all();
     nb = recettes.count()
+    if request.method == 'GET':
+        if request.GET.get('type'):
+            if request.GET['type'] in TYPE_CHOICES:
+                type = request.GET['type']
+                recettes = Recette.objects.filter(type=type);
+
     contexte = {
         'recettes': recettes,
         'nb' : nb
