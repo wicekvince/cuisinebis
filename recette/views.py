@@ -9,14 +9,22 @@ import pprint
 from django.forms.models import inlineformset_factory
 from django.forms.formsets import formset_factory
 
-
+TYPE_CHOICES = ['1','2','3','4'];
 
 def index(request):
-    recettes = Recette.objects.all()
+
+    recettes = Recette.objects.all();
     nb = recettes.count()
+    if request.method == 'GET':
+        if request.GET.get('type'):
+            if request.GET['type'] in TYPE_CHOICES:
+                type = request.GET['type']
+                recettes = Recette.objects.filter(type=type);
+
     contexte = {
         'recettes': recettes,
         'nb' : nb
+
     }
     return render(request, 'recette/index.html', contexte)
 
@@ -75,6 +83,7 @@ def nouvelleRecette(request):
     return render(request, 'recette/nouvelle-recette.html', contexte)
 
 def search(request):
+
     query = request.GET.get('search_query')
     orderby = ''
     orderway = ''
