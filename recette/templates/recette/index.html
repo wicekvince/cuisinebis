@@ -1,12 +1,38 @@
 {% extends 'recette/_base.html' %}
 {% block titre %}Liste des sondages{% endblock %}
 {% block contenu %}
-    <h3>Bienvenue !</h3>
-
-    <h2>Nos recettes</h2>
+    {% if typeObjet %}
+        <h1>{{ typeObjet.label }}</h1>
+        <div>{{ typeObjet.detail }}</div>
+    {% else %}
+        <h1>Voici toutes nos recettes !</h1>
+    {% endif %}
     {% if recettes %}
-    {% for recette in recettes %}
-            <a href="{% url 'recette:recette' recette.id %} {{ recette.slug }}">{{ recette.slug }}{{ recette.titre }}</a>
-        {% endfor %}
+        <table class="table table-hover search-result">
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Titre</th>
+                    <th>Difficulté</th>
+                    <th>Note moyenne</th>
+                    <th>Temps de préparation</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for result in recettes %}
+                <tr>
+                    <td>
+                        <a href="#">
+                            <img src="{% if result.photo_set.all %}{% for photo in result.photo_set.all %}{% if forloop.counter == 1%}{{ photo.image.url }}{% endif %}{% endfor %}{% else %}{{ STATIC_URL }}images/no-image.png{% endif %}" alt="" />
+                        </a>
+                    </td>
+                    <td><a href="#">{{ result.titre }}</a></td>
+                    <td>{{ result.difficulte }}</td>
+                    <td></td>
+                    <td>{{ result.temps_preparation }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     {% endif %}
 {% endblock %}
