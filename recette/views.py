@@ -98,9 +98,13 @@ def nouvelleRecette(request):
         if formRecette.is_valid():
             formRecette.save()
 
-    form = RecetteForm();
-    EtapeFormSet = inlineformset_factory(Recette,Etape, RecetteForm)
+    recette = Recette.objects.get(id=1)
+
+
+    form = RecetteForm(instance=recette);
+    EtapeFormSet = inlineformset_factory(Recette,Etape,EtapeForm)
     IngredientFormSet2 = inlineformset_factory(Recette,Ingredient, RecetteForm)
+
 
     contexte = {
         'form'    : form,
@@ -141,3 +145,11 @@ def search(request):
         'results' : results
     }
     return render(request, 'search/search_result.html', contexte)
+
+def mes_recettes(request):
+    if request.user.is_authenticated():
+        results = Recette.objects.filter(user_id=request.user.id)
+    contexte = {
+        'results': results
+    }
+    return render(request, 'recette/mes_recettes.html', contexte)
