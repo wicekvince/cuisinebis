@@ -16,13 +16,16 @@ def index(request):
 
     recettes = Recette.objects.all();
     nb = recettes.count()
+    typeObjet=None
     if request.method == 'GET':
         if request.GET.get('type'):
             if request.GET['type'] in TYPE_CHOICES:
                 type = request.GET['type']
+                typeObjet = Type.objects.get(id=type)
                 recettes = Recette.objects.filter(type=type);
 
     contexte = {
+        'typeObjet': typeObjet,
         'recettes': recettes,
         'nb' : nb
     }
@@ -109,13 +112,14 @@ def search(request):
         'page': page,
         'orderby': orderby,
         'orderway': orderway,
-        'query': query,
+           'query': query,
         'results' : results
     }
     return render(request, 'search/search_result.html', contexte)
 
 
 def mes_recettes(request):
+    results = None;
     if request.user.is_authenticated():
         results = Recette.objects.filter(user_id=request.user.id)
     contexte = {

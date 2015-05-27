@@ -86,7 +86,7 @@ background-color:#8bc34a;    letter-spacing: 0.5px;    text-transform: uppercase
     width: 900px;
 }
 #menu ul li{
-list-style:none;display:inline;float:left;width:auto;height:42px;line-height:42px; font-family:Arial, Helvetica, sans-serif; font-size:15px;
+list-style:none;display:inline;float:left;width:auto;height:42px;line-height:42px; font-family:Arial, Helvetica, sans-serif; font-size:12px;
 }
 #menu ul li a{
 padding:0 15px;height:42px; width: auto;float:left;text-decoration:none;color:#fff;text-align:center;
@@ -246,4 +246,5 @@ h1{margin:0 0 10px 0 !important}
     height: 50px;
     text-align: center;
     text-indent: -9999px;}
-table td{vertical-align: middle !important;}
+.my-recettes .supr a{background: url(../images/delete.png) no-repeat 13px center;}
+table td{vertical-align: middle !important;text-align: center}

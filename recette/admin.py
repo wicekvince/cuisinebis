@@ -1,20 +1,22 @@
 from django.contrib import admin
-from .models import Recette,  Ingredient,  Etape,  Photo, Note, Commentaire
-from .models import Recette,  Ingredient,  Etape,  Photo, Type
-from django.contrib.auth.models import User
+from .models import Recette,  Ingredient,  Etape,  Photo, Note, Commentaire, Type
 
 
 class EtapeAdmin(admin.StackedInline):
     model = Etape
 
+
 class NoteAdmin(admin.ModelAdmin):
     model = Note
+
 
 class CommentaireAdmin(admin.ModelAdmin):
     model = Commentaire
 
+
 class IngredientAdmin(admin.StackedInline):
     model = Ingredient
+
 
 class IngredientAdmin2(admin.ModelAdmin):
     model = Ingredient

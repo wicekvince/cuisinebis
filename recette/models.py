@@ -21,7 +21,7 @@ class Etape(models.Model):
 class Type(models.Model):
     title = models.CharField(max_length=256)
     label = models.CharField(max_length=100,default='Label')
-    detail = models.CharField(max_length=256)
+    detail = models.TextField()
 
     def __str__(self):
         return self.title
