@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RecetteForm,EtapeForm,RegistrationForm,IngredientForm, CommentaireForm, NoteForm
-from .models import Ingredient,  Etape,  Photo,  Recette, Note, Commentaire
+from .models import Ingredient,  Etape,  Photo,  Recette, Note, Commentaire, Type
 from django import template
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import pprint

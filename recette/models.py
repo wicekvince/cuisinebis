@@ -26,6 +26,14 @@ class Type(models.Model):
     def __str__(self):
         return self.title
 
+
+class Difficulte(models.Model):
+    text = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.text
+
+
 TYPE_CHOICES = (
     (1, 'Entrée'),
     (2, 'Plat'),
@@ -34,9 +42,11 @@ TYPE_CHOICES = (
 )
 
 DIFF_CHOICES = (
-    (1, 'Recette Facile'),
-    (2, 'Difficulté moyenne'),
-    (3, 'Recette difficile'),
+    (1, 'Très acile'),
+    (2, 'Facile'),
+    (3, 'Moyenne'),
+    (4, 'Difficile'),
+    (5, 'Difficile')
 )
 
 
@@ -44,8 +54,8 @@ class Recette(models.Model):
     user = models.ForeignKey(User)
     type = models.ForeignKey('Type')
     titre = models.CharField(max_length=100)
-    difficulte = models.IntegerField(choices=DIFF_CHOICES)
     cout = models.FloatField()
+    difficulte = models.ForeignKey('Difficulte',default=1)
     temps_preparation = models.IntegerField()
     temps_cuisson = models.IntegerField()
     temps_repos = models.IntegerField()
