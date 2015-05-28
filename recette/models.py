@@ -15,7 +15,7 @@ class Ingredient(models.Model):
 
 class Etape(models.Model):
     recette = models.ForeignKey('Recette')
-    detail = models.CharField(max_length=100)
+    detail = models.TextField()
 
 
 class Type(models.Model):
@@ -33,25 +33,10 @@ class Difficulte(models.Model):
     def __str__(self):
         return self.text
 
-
-TYPE_CHOICES = (
-    (1, 'Entrée'),
-    (2, 'Plat'),
-    (3, 'Déssert'),
-    (4, 'Apéro'),
-)
-
-DIFF_CHOICES = (
-    (1, 'Très acile'),
-    (2, 'Facile'),
-    (3, 'Moyenne'),
-    (4, 'Difficile'),
-    (5, 'Difficile')
-)
-
+CHOICES = [(i,i) for i in range(11)]
 
 class Recette(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User,default=1)
     type = models.ForeignKey('Type')
     titre = models.CharField(max_length=100)
     cout = models.FloatField()
@@ -65,9 +50,12 @@ class Recette(models.Model):
 
 
 class Note(models.Model):
-    recette = models.ForeignKey('Recette')
-    user = models.ForeignKey(User)
-    note = models.IntegerField()
+    recette = models.ForeignKey('Recette', blank=True, null=True)
+    user = models.ForeignKey(User, blank=True, null=True)
+    note = models.IntegerField(choices=CHOICES)
+
+    def __str__(self):
+        return '%s' % (self.note)
 
 
 class Commentaire(models.Model):

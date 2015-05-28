@@ -4,6 +4,7 @@ from django.forms.models import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+
 class RecetteForm(forms.ModelForm):
     class Meta:
         model = Recette
@@ -27,6 +28,7 @@ class NoteForm(forms.ModelForm):
         fields = ['note']
 
 class CommentaireForm(forms.ModelForm):
+    message = forms.CharField(widget=forms.Textarea(attrs={'cols': 100, 'rows': 5}))
     class Meta:
         model = Commentaire
         fields = ['message']

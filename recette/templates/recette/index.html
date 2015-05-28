@@ -29,11 +29,26 @@
                     <td><a href="{% url 'recette:recette' result.id %}">{{ result.titre }}</a></td>
                     <td>{{ result.difficulte }}</td>
                     <td></td>
-                    <td>{{ result.temps_preparation }}</td>
+                    <td>{{ result.temps_preparation }} minutes</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
+        <div class="pagination">
+            <span class="step-links">
+                {% if recettes.has_previous %}
+                    <a href="?type={{ typeObjet.id }}&page={{ recettes.previous_page_number }}">Résultats précédent</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ recettes.number }} de {{ recettes.paginator.num_pages }}
+                </span>
+
+                {% if recettes.has_next %}
+                    <a href="?type={{ typeObjet.id }}&page={{ recettes.next_page_number }}">Résultats suivant</a>
+                {% endif %}
+            </span>
+        </div>
     {% else %}
         <h2>Aucune recette</h2>
     {% endif %}

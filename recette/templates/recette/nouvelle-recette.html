@@ -11,10 +11,13 @@
     {% endfor %}
     </ol>
 {% endif %}
-    <form action="{% url 'recette:ajout' %}" method="post">
+    <form action="{% url 'recette:ajout' %}" class="form" method="post">
 
-        {{ form3.as_p }}
+        <h3>Recette :</h3>
         {{ form.as_p }}
+        <h3>Ingrédients :</h3>
+        {{ form3.as_p }}
+        <h3>Etapes :</h3>
         {{ form2.as_p }}
     {% csrf_token %}
     <input type="submit" />

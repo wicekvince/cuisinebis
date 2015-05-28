@@ -1,5 +1,5 @@
 {% load static %}
-{% load menu %}
+{% load helper %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +15,7 @@
         <div id="header" class="row">
             <div class="pre-header">
                 <div>
-                    {{ nb }} recettes en lignes !
+                    {% show_nb_recette %}
                     <div class="user-infos">
                         {% if user.is_authenticated %}
                             {{ user.last_name }}

@@ -1,52 +1,64 @@
 {% extends 'recette/_base.html' %}
 {% block titre %}Recette -{{ recette.titre }} {% endblock %}
 {% block contenu %}
-
-    <div class="recette">
-    <h1> {{ recette.titre }}</h1>
-    <span class="recette-detail">
-       Type : {{ recette.type }}
-        Cout : {{ recette.cout }}
-        difficulté : {{ recette.difficulte }}
-    </span>
-    </div>
-
-    <div class="photos">
-        {% for photo in photos %}
-            <img src="{{ photo.image.url }}"/>
-        {% endfor %}
-    </div>
-
-    <div class="etapes">
-        <ul>
-            {% for etape in etapes %}
-                <li> {{ etape.detail }}  </li>
-            {% endfor %}
-        </ul>
-    </div>
-
-    <div class="ingredients">
-        <ul>
-            {% for ingredient in ingredients %}
-                <li> {{ ingredient.nom }} {{ ingredient.quantite }}  </li>
-            {% endfor %}
-        </ul>
-    </div>
-
-    <div class="temps">
-        <ul>
-            <li>Temps de cuisson {{ recette.temps_cuisson }}h</li>
-            <li>Temps de preparation {{ recette.temps_preparation }}h</li>
-            <li>Temps de repos {{ recette.temps_repos }}h</li>
-        </ul>
-    </div>
-
-
+<div class="recette-contain">
+    <div class="main-recette">
+        <h1> {{ recette.titre }}</h1>
+        <span class="recette-detail">
+            <span class="first">Type : {{ recette.type }}</span> -
+            <span>Cout : {{ recette.cout }} €</span> -
+            <span>Difficulté : {{ recette.difficulte }}</span>
+        </span>
     <div class="note">
+        <div class="note-moyenne">Note moyenne : {{ note.note__avg }} / 10</div>
+        <div class="form_note">
+            {% if user.is_authenticated %}
+                {% if form_note %}
+                     <form action="{% url 'recette:recette' recette.id %}" method="post">
+                    {{ form_note }}
+                    {% csrf_token %}
+                     <input type="submit" class="btn btn-primary" value="Noter !">
+                    </form>
+                {% else %}
+                    <span>Vous avez déjà voté !</span>
+                {% endif %}
+            {% else %}
+                <a href="{% url 'login' %}">Connectez-vous pour donner une note à cette recette de malade !</a>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+    <div class="photos col-sm-5">
         <ul>
-                <li> Note moyenne :{{ note.note__avg }}  </li>
-
+            {% for photo in photos %}
+                <li><img class="{% if forloop.counter == 1%}col-sm-12 first{% else %}col-sm-6{% endif %}" src="{{ photo.image.url }}"/></li>
+            {% endfor %}
         </ul>
+    </div>
+    <div class="recette-right col-sm-7">
+        <div class="temps">
+            <ul>
+                <li><span>Temps de cuisson :</span> {{ recette.temps_cuisson }} minutes</li>
+                <li><span>Temps de preparation :</span> {{ recette.temps_preparation }} minutes</li>
+                <li><span>Temps de repos :</span> {{ recette.temps_repos }} minutes</li>
+            </ul>
+        </div>
+        <div class="etapes">
+            <h4> Etapes :</h4>
+            <ul>
+                {% for etape in etapes %}
+                    <li> {{ etape.detail }}  </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="ingredients">
+            <h4> Ingrédients :</h4>
+            <ul>
+                {% for ingredient in ingredients %}
+                    <li> {{ ingredient.nom }} {{ ingredient.quantite }}  </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
     <div class="commentaire">
         <ul>
@@ -57,25 +69,16 @@
         </ul>
     </div>
 
-    <div class="form_note">
-    {% if form_note %}
-         <form action="/" method="post">
-        {{ form_note }}
-        {% csrf_token %}
-         <input type="submit" value="Noter">
-        </form>
-    {% endif %}
-    </div>
-
-    <div class="form_com">
-    {% if form_com %}
-        <form action="/" method="post">
-        {{ form_com }}
-        {% csrf_token %}
-         <input type="submit" value="Commenter">
-        </form>
-    {% else %}
-        Vous avez déjà voté !
-    {% endif %}
+    <div class="form_com col-sm-12">
+        <h4> Commentaires :</h4>
+        {% if form_com %}
+            <form action="/" method="post">
+            {{ form_com }}
+            {% csrf_token %}
+             <input type="submit" class="btn btn-primary" value="Commenter">
+            </form>
+        {% else %}
+            Vous avez déjà voté !
+        {% endif %}
     </div>
 {% endblock %}

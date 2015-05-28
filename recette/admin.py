@@ -8,6 +8,8 @@ class EtapeAdmin(admin.StackedInline):
 
 class NoteAdmin(admin.ModelAdmin):
     model = Note
+    list_display = ('note','recette','user')
+    list_display_links = ('note','recette','user')
 
 
 class CommentaireAdmin(admin.ModelAdmin):
@@ -36,6 +38,7 @@ class IngredientAdmin(admin.ModelAdmin):
 
 class TypeAdmin(admin.ModelAdmin):
     model = Type
+
 
 class DifficulteAdmin(admin.ModelAdmin):
     model = Difficulte

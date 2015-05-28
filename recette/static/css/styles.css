@@ -129,7 +129,7 @@ color: #fff;
 background-color:#ff5a26;
 }
 #footer > div{width:900px;margin:auto;    overflow: hidden;
-    padding: 8px 0;}
+    padding: 10px;}
 .copyright{
 float:left;
 padding-left:10px;
@@ -179,7 +179,7 @@ h1{margin:0 0 10px 0 !important}
 }
 .pre-header{background-color: #DCE775}
 .pre-header > div {
-    color: #868686;
+    color: #214c09;
     font-weight: 600;
     margin: auto;
     padding:3px 0px 3px 0;
@@ -242,9 +242,29 @@ h1{margin:0 0 10px 0 !important}
     float: right !important;}
 .add-recette a{background: url(../images/add.png) no-repeat 4% center;padding-left: 50px !important;}
 .add-recette a:hover{background-image: url(../images/addhover.png)}
-.my-recettes a{background: url(../images/modify.png) no-repeat 13px center;display: block;
+.my-recettes .link a{background: url(../images/modify.png) no-repeat 13px center;display: block;
     height: 50px;
     text-align: center;
     text-indent: -9999px;}
 .my-recettes .supr a{background: url(../images/delete.png) no-repeat 13px center;}
 table td{vertical-align: middle !important;text-align: center}
+ul{list-style: none;padding-left: 0}
+.recette-contain{overflow: hidden}
+.recette-contain .photos{margin: 20px 0 0 0;overflow: hidden}
+.recette-contain .photos img.first{margin-bottom: 20px;padding: 0 !important}
+.recette-detail > span {margin: 0 15px;}
+.etapes li::before, .ingredients li::before {content: "- "; margin-right: 10px;}
+.temps li {color: #216944;font-weight: 600;}
+.recette-detail {color: #216944;font-size: 15px;display: block;}
+.photos{padding-left: 0 !important;}
+.recette-detail .first{margin-left: 0 !important;}
+.recette-right{padding-right: 0 !important;text-align: justify}
+.note{margin: 10px 0}
+.form_com label {display: block;overflow: hidden;text-align: left;width: 100%;}
+.form_com input {display: block;margin-top: 10px;}
+.form_com textarea{resize: vertical}
+.form_note, .note-moyenne {display: inline-block;}
+.note {background-color: #dce775;margin: 10px 0;padding: 4px 7px;}
+.form_note .btn {margin-left: 15px;}
+.form_note > a,.form_note > span {font-style: italic;margin-left: 30px;}
+.form_note label {margin-top: 3px;}

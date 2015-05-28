@@ -33,11 +33,13 @@
             {% for result in results %}
                 <tr>
                     <td>
-                    <img src="{% if result.photo_set.all %}{% for photo in result.photo_set.all %}{% if forloop.counter == 1%}{{ photo.image.url }}{% endif %}{% endfor %}{% else %}{{ STATIC_URL }}images/no-image.png{% endif %}" alt="" /></td>
-                    <td>{{ result.titre }}</td>
+                        <a href="{% url 'recette:recette' result.id %}">
+                            <img src="{% if result.photo_set.all %}{% for photo in result.photo_set.all %}{% if forloop.counter == 1%}{{ photo.image.url }}{% endif %}{% endfor %}{% else %}{{ STATIC_URL }}images/no-image.png{% endif %}" alt="" /></td>
+                        </a>
+                    <td><a href="{% url 'recette:recette' result.id %}">{{ result.titre }}</a></td>
                     <td>{{ result.difficulte }}</td>
-                    <td></td>
-                    <td>{{ result.temps_preparation }}</td>
+                    <td>{{ result.note_set.all }}</td>
+                    <td>{{ result.temps_preparation }} minutes</td>
                 </tr>
             {% endfor %}
         </tbody>

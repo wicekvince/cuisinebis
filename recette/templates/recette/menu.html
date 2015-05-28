@@ -1,3 +1,4 @@
+<li><a href="{% url 'recette:index' %}">Acceuil</a></li>
 {% for type in types %}
     <li><a href="{% url 'recette:index' %}?type={{ type.id }}">{{ type.label }}</a></li>
 {% endfor %}
