@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Recette,  Ingredient,  Etape,  Photo, Note, Commentaire, Type
+from .models import Recette,  Ingredient,  Etape,  Photo, Note, Commentaire, Type, Difficulte
 
 
 class EtapeAdmin(admin.StackedInline):
@@ -27,7 +27,7 @@ class PhotoAdmin(admin.StackedInline):
 
 
 class RecetteAdmin(admin.ModelAdmin):
-    inlines = [ EtapeAdmin,IngredientAdmin,PhotoAdmin]
+    inlines = [ EtapeAdmin,IngredientAdmin,PhotoAdmin ]
 
 
 class IngredientAdmin(admin.ModelAdmin):
@@ -37,8 +37,12 @@ class IngredientAdmin(admin.ModelAdmin):
 class TypeAdmin(admin.ModelAdmin):
     model = Type
 
+class DifficulteAdmin(admin.ModelAdmin):
+    model = Difficulte
+
 admin.site.register(Recette, RecetteAdmin)
 admin.site.register(Commentaire, CommentaireAdmin)
 admin.site.register(Note, NoteAdmin)
 admin.site.register(Type, TypeAdmin)
+admin.site.register(Difficulte, DifficulteAdmin)
 admin.site.register(Ingredient, IngredientAdmin2)

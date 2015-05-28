@@ -22,11 +22,11 @@
             {% for result in recettes %}
                 <tr>
                     <td>
-                        <a href="#">
+                        <a href="{% url 'recette:recette' result.id %}">
                             <img src="{% if result.photo_set.all %}{% for photo in result.photo_set.all %}{% if forloop.counter == 1%}{{ photo.image.url }}{% endif %}{% endfor %}{% else %}{{ STATIC_URL }}images/no-image.png{% endif %}" alt="" />
                         </a>
                     </td>
-                    <td><a href="#">{{ result.titre }}</a></td>
+                    <td><a href="{% url 'recette:recette' result.id %}">{{ result.titre }}</a></td>
                     <td>{{ result.difficulte }}</td>
                     <td></td>
                     <td>{{ result.temps_preparation }}</td>
@@ -34,5 +34,7 @@
             {% endfor %}
             </tbody>
         </table>
+    {% else %}
+        <h2>Aucune recette</h2>
     {% endif %}
 {% endblock %}
