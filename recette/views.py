@@ -119,9 +119,7 @@ def nouvelleRecette(request):
 
 def supprimerRecette(request, id):
     suppr = Recette.objects.get(id=id).delete()
-    return redirect('recette:mes_recettes')
-
-
+    return render(request, 'recette/mes_recettes.html')
 
 def search(request):
 
