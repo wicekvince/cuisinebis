@@ -23,8 +23,8 @@
                     <td>{{ result.difficulte }}</td>
                     <td></td>
                     <td>{{ result.temps_preparation }}</td>
-                    <td class="modify"><a href="#">Modifier</a></td>
-                    <td class="supr"><a href="#">Supprimer</a></td>
+                    <td class="modify"><a href="">Modifier</a></td>
+                    <td class="supr"><a href="{% url 'recette:supprimerrecette' result.id %}">Supprimer</a></td>
                 </tr>
             {% endfor %}
         </tbody>
