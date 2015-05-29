@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.aggregates import Avg
 
 
 class Photo(models.Model):
@@ -44,6 +45,12 @@ class Recette(models.Model):
     temps_preparation = models.IntegerField()
     temps_cuisson = models.IntegerField()
     temps_repos = models.IntegerField()
+
+
+    def calculateAvg(self):
+        return Note.objects.filter(recette = self).aggregate(Avg('note'))
+
+    moyenne_note = property(calculateAvg)
 
     def __str__(self):
         return self.titre

@@ -162,7 +162,7 @@ def search(request):
         'page': page,
         'orderby': orderby,
         'orderway': orderway,
-           'query': query,
+        'query': query,
         'results' : results
     }
     return render(request, 'search/search_result.html', contexte)
