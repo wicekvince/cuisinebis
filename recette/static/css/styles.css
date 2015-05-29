@@ -269,3 +269,4 @@ ul{list-style: none;padding-left: 0}
 .form_note > a,.form_note > span {font-style: italic;margin-left: 30px;}
 .form_note label {margin-top: 3px;}
 h5.success_message {background-color: #dce775;font-style: italic;padding: 10px;}
+.photos img.col-sm-6 {padding: 0 4px;}

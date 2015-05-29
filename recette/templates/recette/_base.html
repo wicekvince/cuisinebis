@@ -7,8 +7,9 @@
         <title>{% block titre %}{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="../../static/css/styles.css">
         <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../static/css/jquery.fancybox.css">
         <script src="../../static/js/jquery-1.11.3.min.js"></script>
-        <script src="../../static/js/jquery.bxslider.js"></script>
+        <script src="../../static/js/jquery.fancybox.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
     </head>
     <body>
@@ -76,15 +77,3 @@
         </div>
     </body>
 </html>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('.bxslider').bxSlider({
-        speed: 1000,
-        controls : false,
-        pager : false,
-        auto : true,
-        mode: 'fade'
-    });
-});
-
-</script>
