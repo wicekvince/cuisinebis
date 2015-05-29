@@ -10,6 +10,9 @@ from django.forms.models import inlineformset_factory
 from django.forms.formsets import formset_factory
 from django.db.models import Avg
 from recette.views import Recette
+from django.http import HttpResponseRedirect, HttpResponse
+from django.core.urlresolvers import reverse
+from django.contrib.auth.forms import AuthenticationForm
 
 TYPE_CHOICES = ['1','2','3','4'];
 
@@ -48,7 +51,11 @@ def register(request):
             user.first_name = request.POST['first_name']
             user.last_name = request.POST['last_name']
             user.save()
-            return redirect('recette:index')
+            contexte = {
+                'form': AuthenticationForm,
+                'success_message':'success'
+            }
+            return render(request, 'registration/login.html', contexte)
     else:
         user_form = RegistrationForm()
     contexte = {

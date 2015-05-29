@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     url(r'^account/register/$', register, name='register'),
     url(r'^search_result/$', search, name='search'),
     url(r'^mes_recettes/$', mes_recettes, name='mesrecettes'),
-    url(r'^supprimer_recette/(?P<id>\d+)/', supprimerRecette, name='supprimerrecette')
+    url(r'^supprimer_recette/(?P<id>\d+)/', supprimerRecette, name='supprimerrecette'),
 )
 
 
