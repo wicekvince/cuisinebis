@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.aggregates import Avg
-
+from datetime import datetime
 
 class Photo(models.Model):
     recette = models.ForeignKey('Recette', blank=True, null=True)
@@ -69,4 +69,4 @@ class Commentaire(models.Model):
     recette = models.ForeignKey('Recette', blank=True, null=True)
     user = models.ForeignKey(User, blank=True, null=True)
     message = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True,default=None, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True,default=datetime.now, blank=True, null=True)
