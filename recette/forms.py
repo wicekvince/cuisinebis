@@ -27,11 +27,13 @@ class NoteForm(forms.ModelForm):
         model = Note
         fields = ['note']
 
+
 class CommentaireForm(forms.ModelForm):
     message = forms.CharField(widget=forms.Textarea(attrs={'cols': 100, 'rows': 5}))
     class Meta:
         model = Commentaire
         fields = ['message']
+
 
 class TestForm(forms.Form):
     nom = forms.CharField(max_length=100)

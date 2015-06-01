@@ -14,6 +14,8 @@ class NoteAdmin(admin.ModelAdmin):
 
 class CommentaireAdmin(admin.ModelAdmin):
     model = Commentaire
+    list_display = ('message','recette','user')
+    list_display_links = ('message','recette','user')
 
 
 class IngredientAdmin(admin.StackedInline):

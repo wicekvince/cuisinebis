@@ -68,12 +68,19 @@ def recette(request, id):
 
     if (request.method == 'POST'):
         note_form = NoteForm(request.POST)
+        commentaire_form = CommentaireForm(request.POST)
 
         if note_form.is_valid():
             note = note_form.save()
             note.recette = Recette.objects.get(id=id)
             note.user = request.user
             note.save()
+
+        if commentaire_form.is_valid():
+            commentaire = commentaire_form.save()
+            commentaire.recette = Recette.objects.get(id=id)
+            commentaire.user = request.user
+            commentaire.save()
 
     recette = Recette.objects.get(id=id)
     etapes = Etape.objects.filter(recette=id)

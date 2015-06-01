@@ -28,7 +28,7 @@
                     </td>
                     <td><a href="{% url 'recette:recette' result.id %}">{{ result.titre }}</a></td>
                     <td>{{ result.difficulte }}</td>
-                    <td>{% if result.moyenne_note.note__avg %}{{ result.moyenne_note.note__avg }}{% else %}Pas de notes{% endif %}</td>
+                    <td>{% if result.moyenne_note.note__avg %}{{ result.moyenne_note.note__avg|floatformat:"2" }}{% else %}Pas de notes{% endif %}</td>
                     <td>{{ result.temps_preparation }} minutes</td>
                 </tr>
             {% endfor %}

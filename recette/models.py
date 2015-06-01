@@ -67,5 +67,6 @@ class Note(models.Model):
 
 class Commentaire(models.Model):
     recette = models.ForeignKey('Recette', blank=True, null=True)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, blank=True, null=True)
     message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True,default=None)

@@ -60,20 +60,23 @@
             </ul>
         </div>
     </div>
-    <div class="commentaire">
-        <ul>
-            {% for com in commentaires %}
-                <li> {{ com.user }} dit:
-                 {{ com.message }}  </li>
-            {% endfor %}
-        </ul>
-    </div>
 
     <div class="form_com col-sm-12">
-        <h4> Commentaires :</h4>
+        <h3> Commentaires :</h3>
+        <div class="commentaire">
+            <ul>
+                {% for com in commentaires %}
+                    <li>
+                        <span>{{ com.user }} le {{ com.created_at }}</span>
+                        <div>{{ com.message }}</div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
         {% if user.is_authenticated %}
             {% if form_com %}
-                <form action="/" method="post">
+                <h4>Ajouter un commentaire</h4>
+                <form action="{% url 'recette:recette' recette.id %}" method="post">
                 {{ form_com }}
                 {% csrf_token %}
                  <input type="submit" class="btn btn-primary" value="Commenter">

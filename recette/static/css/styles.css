@@ -247,7 +247,7 @@ h1{margin:0 0 10px 0 !important}
     text-align: center;
     text-indent: -9999px;}
 .my-recettes .supr a{background: url(../images/delete.png) no-repeat 13px center;}
-table td{vertical-align: middle !important;text-align: center}
+table td{vertical-align: middle !important;}
 ul{list-style: none;padding-left: 0}
 .recette-contain{overflow: hidden}
 .recette-contain .photos{margin: 20px 0 0 0;overflow: hidden}
@@ -270,3 +270,19 @@ ul{list-style: none;padding-left: 0}
 .form_note label {margin-top: 3px;}
 h5.success_message {background-color: #dce775;font-style: italic;padding: 10px;}
 .photos img.col-sm-6 {padding: 0 4px;}
+.form_com{    border-top: 1px dashed black;
+    margin-top: 40px;
+    padding-top: 20px;}
+.commentaire span {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    overflow: hidden;
+}
+.commentaire li {
+    background: url(../images/panda.png) no-repeat left center / 65px;
+    border-bottom: 1px solid #ff5a26;
+    margin: 15px 0;
+    padding: 15px 0 15px 80px;
+}
