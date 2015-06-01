@@ -10,7 +10,7 @@
             <span>Difficulté : {{ recette.difficulte }}</span>
         </span>
     <div class="note">
-        <div class="note-moyenne">Note moyenne : {{ note.note__avg }} / 10</div>
+        <div class="note-moyenne">Note moyenne : {{ note.note__avg|floatformat:"2" }} / 10</div>
         <div class="form_note">
             {% if user.is_authenticated %}
                 {% if form_note %}
