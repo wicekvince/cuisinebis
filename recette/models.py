@@ -4,18 +4,18 @@ from django.db.models.aggregates import Avg
 
 
 class Photo(models.Model):
-    recette = models.ForeignKey('Recette')
+    recette = models.ForeignKey('Recette', blank=True, null=True)
     image = models.ImageField(upload_to="photos_recettes", max_length=100)
 
 
 class Ingredient(models.Model):
-    recette = models.ForeignKey('Recette')
+    recette = models.ForeignKey('Recette', blank=True, null=True)
     nom = models.CharField(max_length=100)
     quantite = models.CharField(max_length=100)
 
 
 class Etape(models.Model):
-    recette = models.ForeignKey('Recette')
+    recette = models.ForeignKey('Recette', blank=True, null=True)
     detail = models.TextField()
 
 
@@ -66,6 +66,6 @@ class Note(models.Model):
 
 
 class Commentaire(models.Model):
-    recette = models.ForeignKey('Recette')
+    recette = models.ForeignKey('Recette', blank=True, null=True)
     user = models.ForeignKey(User)
     message = models.TextField()
