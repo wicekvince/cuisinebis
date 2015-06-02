@@ -1,5 +1,5 @@
 from django import forms
-from .models import Recette, Etape, Ingredient , Note, Commentaire
+from .models import Recette, Etape, Ingredient , Note, Commentaire, Photo
 from django.forms.models import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -19,6 +19,7 @@ class EtapeCustomForm(forms.ModelForm):
 
 IngredientFormset = inlineformset_factory(Recette, Ingredient)
 EtapeFormset = inlineformset_factory(Recette, Etape,form=EtapeCustomForm)
+ImageFormset = inlineformset_factory(Recette, Photo)
 
 
 class NoteForm(forms.ModelForm):

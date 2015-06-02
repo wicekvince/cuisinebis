@@ -4,7 +4,7 @@ from django.db.models.aggregates import Avg
 from datetime import datetime
 
 class Photo(models.Model):
-    recette = models.ForeignKey('Recette', blank=True, null=True)
+    recette = models.ForeignKey('Recette',null=True,editable=False)
     image = models.ImageField(upload_to="photos_recettes", max_length=100)
 
 

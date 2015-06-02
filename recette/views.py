@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RecetteForm,EtapeFormset,RegistrationForm,IngredientFormset, CommentaireForm, NoteForm
+from .forms import RecetteForm,EtapeFormset,RegistrationForm,IngredientFormset,ImageFormset, CommentaireForm, NoteForm
 from .models import Ingredient,  Etape,  Photo,  Recette, Note, Commentaire, Type
 from django import template
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -112,6 +112,7 @@ def nouvelleRecette(request):
     form = RecetteForm()
     IngredientForm = IngredientFormset()
     EtapeForm = EtapeFormset()
+    ImageForm = ImageFormset()
 
     if request.method == 'POST':
         form = RecetteForm(request.POST)
@@ -125,19 +126,22 @@ def nouvelleRecette(request):
                 EtapeForm = EtapeFormset(request.POST,instance=recette)
                 if EtapeForm.is_valid():
                     EtapeForm.save()
-                    return render(request, "recette/nouvelle-recette.html", {
-                        'form': form,
-                        'IngredientForm': IngredientForm,
-                        'EtapeForm': EtapeForm,
-                        'action': "Create",
-                        'success_message':'success'
-                    })
+                    ImageForm = ImageFormset(request.POST,request.FILES,instance=recette)
+                    if ImageForm.is_valid():
+                        ImageForm.save()
+                        return render(request, "recette/nouvelle-recette.html", {
+                            'form': form,
+                            'IngredientForm': IngredientForm,
+                            'EtapeForm': EtapeForm,
+                            'ImageForm': ImageForm,
+                            'success_message':'success'
+                        })
 
     return render(request, "recette/nouvelle-recette.html", {
         'form': form,
         'IngredientForm': IngredientForm,
         'EtapeForm': EtapeForm,
-        'action': "Create"
+        'ImageForm':ImageForm,
     })
 
 

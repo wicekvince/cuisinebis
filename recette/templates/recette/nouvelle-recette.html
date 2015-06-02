@@ -15,7 +15,7 @@
     {% endfor %}
     </ol>
     {% endif %}
-    <form action="{% url 'recette:ajout' %}" class="form" method="post">
+    <form action="{% url 'recette:ajout' %}" class="form" method="post" enctype="multipart/form-data">
     {% csrf_token %}
         <h3>Recette :</h3>
         {{ form.as_p }}
@@ -23,6 +23,8 @@
         {{ IngredientForm.as_p }}
         <h3>Etapes :</h3>
         {{ EtapeForm.as_p }}
+        <h3>Photos :</h3>
+        {{ ImageForm.as_p }}
         <input class="btn btn-primary" type="submit" value="Ajouter la recette !" />
     </form>
 </div>
