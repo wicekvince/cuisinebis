@@ -9,13 +9,13 @@ class Photo(models.Model):
 
 
 class Ingredient(models.Model):
-    recette = models.ForeignKey('Recette', blank=True, null=True)
+    recette = models.ForeignKey('Recette', null=True,editable=False)
     nom = models.CharField(max_length=100)
     quantite = models.CharField(max_length=100)
 
 
 class Etape(models.Model):
-    recette = models.ForeignKey('Recette', blank=True, null=True)
+    recette = models.ForeignKey('Recette', null=True,editable=False)
     detail = models.TextField()
 
 
@@ -37,14 +37,14 @@ class Difficulte(models.Model):
 CHOICES = [(i,i) for i in range(11)]
 
 class Recette(models.Model):
-    user = models.ForeignKey(User,default=1)
-    type = models.ForeignKey('Type')
+    user = models.ForeignKey(User,default=1,editable=False)
+    type = models.ForeignKey('Type', null=True)
     titre = models.CharField(max_length=100)
-    cout = models.FloatField()
+    cout = models.FloatField(null=True)
     difficulte = models.ForeignKey('Difficulte',default=1)
-    temps_preparation = models.IntegerField()
-    temps_cuisson = models.IntegerField()
-    temps_repos = models.IntegerField()
+    temps_preparation = models.IntegerField(null=True)
+    temps_cuisson = models.IntegerField(null=True)
+    temps_repos = models.IntegerField(null=True)
 
 
     def calculateAvg(self):

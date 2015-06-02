@@ -6,16 +6,19 @@ from django.contrib.auth.models import User
 
 
 class RecetteForm(forms.ModelForm):
+    required_css_class = 'required'
     class Meta:
         model = Recette
 
 
 class EtapeForm(forms.ModelForm):
+    required_css_class = 'required'
+    detail = forms.CharField(widget=forms.Textarea(attrs={'cols': 40, 'rows': 2}))
     class Meta:
         model = Etape
 
 class IngredientForm(forms.ModelForm):
-
+    required_css_class = 'required'
     class Meta:
         model = Ingredient
 
