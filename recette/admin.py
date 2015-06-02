@@ -32,6 +32,8 @@ class PhotoAdmin(admin.StackedInline):
 
 class RecetteAdmin(admin.ModelAdmin):
     inlines = [ EtapeAdmin,IngredientAdmin,PhotoAdmin ]
+    list_display = ('titre','user')
+    list_display_links = ('titre','user')
 
 
 class IngredientAdmin(admin.ModelAdmin):

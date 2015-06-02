@@ -15,7 +15,7 @@ class Ingredient(models.Model):
 
 
 class Etape(models.Model):
-    recette = models.ForeignKey('Recette', null=True,editable=False)
+    recette = models.ForeignKey('Recette', null=True, editable=False)
     detail = models.TextField()
 
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RecetteForm,EtapeForm,RegistrationForm,IngredientForm, CommentaireForm, NoteForm
+from .forms import RecetteForm,EtapeFormset,RegistrationForm,IngredientFormset, CommentaireForm, NoteForm
 from .models import Ingredient,  Etape,  Photo,  Recette, Note, Commentaire, Type
 from django import template
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -14,15 +14,18 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.forms import AuthenticationForm
 
+TYPE_CHOICES = ['1','2','3','4'];
+
 def index(request):
 
     recettes = Recette.objects.all();
     typeObjet=None
     if request.method == 'GET':
         if request.GET.get('type'):
-            type = request.GET['type']
-            typeObjet = Type.objects.get(id=type)
-            recettes = Recette.objects.filter(type=type);
+            if request.GET['type'] in TYPE_CHOICES:
+                type = request.GET['type']
+                typeObjet = Type.objects.get(id=type)
+                recettes = Recette.objects.filter(type=type);
     paginator = Paginator(recettes, 10)
     page = request.GET.get('page')
     try:
@@ -106,36 +109,36 @@ def recette(request, id):
 
 def nouvelleRecette(request):
 
-    recette = ''
+    form = RecetteForm()
+    IngredientForm = IngredientFormset()
+    EtapeForm = EtapeFormset()
 
     if request.method == 'POST':
         form = RecetteForm(request.POST)
-        formEtape = EtapeForm(request.POST)
-        formIngredient = IngredientForm(request.POST)
         if form.is_valid():
             recette = form.save()
             recette.user = request.user
             recette.save()
-            if formEtape.is_valid():
-                etape = formEtape.save()
-                etape.recette = recette
-                etape.save()
-                if formIngredient.is_valid():
-                    ingredient = formIngredient.save()
-                    ingredient.recette = recette
-                    ingredient.save()
-    else:
-        form = RecetteForm()
-        formEtape = EtapeForm()
-        formIngredient = IngredientForm()
+            IngredientForm = IngredientFormset(request.POST,instance=recette)
+            if IngredientForm.is_valid():
+                IngredientForm.save()
+                EtapeForm = EtapeFormset(request.POST,instance=recette)
+                if EtapeForm.is_valid():
+                    EtapeForm.save()
+                    return render(request, "recette/nouvelle-recette.html", {
+                        'form': form,
+                        'IngredientForm': IngredientForm,
+                        'EtapeForm': EtapeForm,
+                        'action': "Create",
+                        'success_message':'success'
+                    })
 
-    contexte = {
-        'form'    : form,
-        'recette' : recette,
-        'form2'    : formEtape,
-        'form3'    : formIngredient,
-    }
-    return render(request, 'recette/nouvelle-recette.html', contexte)
+    return render(request, "recette/nouvelle-recette.html", {
+        'form': form,
+        'IngredientForm': IngredientForm,
+        'EtapeForm': EtapeForm,
+        'action': "Create"
+    })
 
 
 def supprimerRecette(request, id):

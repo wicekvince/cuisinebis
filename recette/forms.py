@@ -10,19 +10,15 @@ class RecetteForm(forms.ModelForm):
     class Meta:
         model = Recette
 
-
-class EtapeForm(forms.ModelForm):
+class EtapeCustomForm(forms.ModelForm):
     required_css_class = 'required'
-    detail = forms.CharField(widget=forms.Textarea(attrs={'cols': 40, 'rows': 2}))
+    detail = forms.CharField(required = True, widget=forms.Textarea(attrs={'cols': 40, 'rows': 2}))
     class Meta:
         model = Etape
 
-class IngredientForm(forms.ModelForm):
-    required_css_class = 'required'
-    class Meta:
-        model = Ingredient
 
-RecetteIngredientFormset = inlineformset_factory(Recette, Ingredient)
+IngredientFormset = inlineformset_factory(Recette, Ingredient)
+EtapeFormset = inlineformset_factory(Recette, Etape,form=EtapeCustomForm)
 
 
 class NoteForm(forms.ModelForm):
