@@ -2,6 +2,11 @@
 {% block contenu %}
     {% if results %}
     <h1>J'ai actuellement {{ results.count }} recettes.</h1>
+
+    {% if success_message %}
+        <h5 class="success_message">Votre recette a bien été modifié ! <a href="{% url 'recette:mesrecettes' %}">Consulter mes recettes</a></h5>
+    {% endif %}
+
     <table class="table table-hover search-result my-recettes">
         <thead>
             <tr>
@@ -25,7 +30,7 @@
                     <td>{{ result.difficulte }}</td>
                     <td>{% if result.moyenne_note.note__avg %}{{ result.moyenne_note.note__avg|floatformat:"2" }}{% else %}Pas de notes{% endif %}</td>
                     <td>{{ result.temps_preparation }}</td>
-                    <td class="link modify"><a href="">Modifier</a></td>
+                    <td class="link modify"><a href="{% url 'recette:modify_recette' result.id %}">Modifier</a></td>
                     <td class="link supr"><a href="{% url 'recette:supprimerrecette' result.id %}">Supprimer</a></td>
                 </tr>
             {% endfor %}

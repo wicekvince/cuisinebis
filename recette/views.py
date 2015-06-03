@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RecetteForm,EtapeFormset,RegistrationForm,IngredientFormset,ImageFormset, CommentaireForm, NoteForm
+from .forms import RecetteForm,EtapeFormset,RegistrationForm,IngredientFormset,ImageFormset, CommentaireForm, NoteForm, EtapeCustomForm
 from .models import Ingredient,  Etape,  Photo,  Recette, Note, Commentaire, Type
 from django import template
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -13,6 +13,8 @@ from recette.views import Recette
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import get_list_or_404, get_object_or_404
+from django.forms.models import modelformset_factory
 
 TYPE_CHOICES = ['1','2','3','4'];
 
@@ -145,8 +147,50 @@ def nouvelleRecette(request):
     })
 
 
+def modifyRecette(request, id):
+    recette = get_object_or_404(Recette, id=id)
+
+    ingredientFormSetCustom = modelformset_factory(Ingredient)
+    etapeFormSetCustom = modelformset_factory(Etape, form=EtapeCustomForm)
+    photoFormSetCustom = modelformset_factory(Photo)
+
+    ingredients = Ingredient.objects.filter(recette=recette)
+    etapes = Etape.objects.filter(recette=recette)
+    photos = Photo.objects.filter(recette=recette)
+
+    IngredientForm = ingredientFormSetCustom(queryset=ingredients)
+    EtapeForm = etapeFormSetCustom(queryset=etapes)
+    ImageForm = photoFormSetCustom(queryset=photos)
+    formRecette = RecetteForm(instance=recette)
+
+    if request.method == 'POST':
+        form = RecetteForm(request.POST)
+        if form.is_valid():
+            recette = form.save();
+            recette.id = id
+            recette.user = request.user
+            recette.save()
+            results = Recette.objects.filter(user_id=request.user.id)
+            IngredientForm = ingredientFormSetCustom(request.POST)
+            if IngredientForm.is_valid():
+                IngredientForm.save()
+                contexte = {
+                    'results': results,
+                    'success_message':'success'
+                }
+                return render(request, 'recette/mes_recettes.html', contexte)
+
+    return render(request, "recette/modify-recette.html", {
+        'recette': recette,
+        'form': formRecette,
+        'IngredientForm': IngredientForm,
+        'EtapeForm': EtapeForm,
+        'ImageForm':ImageForm,
+    })
+
+
 def supprimerRecette(request, id):
-    suppr = Recette.objects.get(id=id).delete()
+    Recette.objects.get(id=id).delete()
     results = Recette.objects.filter(user_id=request.user.id)
     contexte = {
         'results': results

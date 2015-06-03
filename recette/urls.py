@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from .views import index, recette, register, nouvelleRecette, search, mes_recettes, supprimerRecette
+from .views import index, recette, register, nouvelleRecette, search, mes_recettes, supprimerRecette, modifyRecette
 
 
 urlpatterns = patterns('',
@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^search_result/$', search, name='search'),
     url(r'^mes_recettes/$', mes_recettes, name='mesrecettes'),
     url(r'^supprimer_recette/(?P<id>\d+)/', supprimerRecette, name='supprimerrecette'),
+    url(r'^modify_recette/(?P<id>\d+)/', modifyRecette, name='modify_recette'),
 )
 
 

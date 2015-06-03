@@ -24,6 +24,8 @@ class IngredientAdmin(admin.StackedInline):
 
 class IngredientAdmin2(admin.ModelAdmin):
     model = Ingredient
+    list_display = ('nom','quantite')
+    list_display_links = ('nom','quantite')
 
 
 class PhotoAdmin(admin.StackedInline):
