@@ -3,6 +3,28 @@ from django.contrib.auth.models import User
 from django.db.models.aggregates import Avg
 from datetime import datetime
 
+class Recette(models.Model):
+    user = models.ForeignKey(User,default=1,editable=False)
+    type = models.ForeignKey('Type', null=True)
+    titre = models.CharField(max_length=100)
+    cout = models.FloatField(null=True)
+    difficulte = models.ForeignKey('Difficulte',default=1)
+    temps_preparation = models.IntegerField(null=True)
+    temps_cuisson = models.IntegerField(null=True)
+    temps_repos = models.IntegerField(null=True)
+
+
+    def calculateAvg(self):
+        return Note.objects.filter(recette = self).aggregate(Avg('note'))
+
+    moyenne_note = property(calculateAvg)
+
+    def __str__(self):
+        return self.titre
+
+
+
+
 class Photo(models.Model):
     recette = models.ForeignKey('Recette',null=True,editable=False)
     image = models.ImageField(upload_to="photos_recettes", max_length=100)
@@ -35,26 +57,6 @@ class Difficulte(models.Model):
         return self.text
 
 CHOICES = [(i,i) for i in range(11)]
-
-class Recette(models.Model):
-    user = models.ForeignKey(User,default=1,editable=False)
-    type = models.ForeignKey('Type', null=True)
-    titre = models.CharField(max_length=100)
-    cout = models.FloatField(null=True)
-    difficulte = models.ForeignKey('Difficulte',default=1)
-    temps_preparation = models.IntegerField(null=True)
-    temps_cuisson = models.IntegerField(null=True)
-    temps_repos = models.IntegerField(null=True)
-
-
-    def calculateAvg(self):
-        return Note.objects.filter(recette = self).aggregate(Avg('note'))
-
-    moyenne_note = property(calculateAvg)
-
-    def __str__(self):
-        return self.titre
-
 
 class Note(models.Model):
     recette = models.ForeignKey('Recette', blank=True, null=True)
