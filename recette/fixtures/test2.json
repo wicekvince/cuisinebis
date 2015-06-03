@@ -1,0 +1,1609 @@
+[
+  {
+    "fields": {
+      "app_label": "admin",
+      "name": "log entry",
+      "model": "logentry"
+    },
+    "pk": 68,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "auth",
+      "name": "permission",
+      "model": "permission"
+    },
+    "pk": 69,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "auth",
+      "name": "group",
+      "model": "group"
+    },
+    "pk": 70,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "auth",
+      "name": "user",
+      "model": "user"
+    },
+    "pk": 71,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "contenttypes",
+      "name": "content type",
+      "model": "contenttype"
+    },
+    "pk": 72,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "sessions",
+      "name": "session",
+      "model": "session"
+    },
+    "pk": 73,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "recette",
+      "name": "photo",
+      "model": "photo"
+    },
+    "pk": 74,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "recette",
+      "name": "ingredient",
+      "model": "ingredient"
+    },
+    "pk": 75,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "recette",
+      "name": "etape",
+      "model": "etape"
+    },
+    "pk": 76,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "recette",
+      "name": "type",
+      "model": "type"
+    },
+    "pk": 77,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "recette",
+      "name": "difficulte",
+      "model": "difficulte"
+    },
+    "pk": 78,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "recette",
+      "name": "recette",
+      "model": "recette"
+    },
+    "pk": 79,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "recette",
+      "name": "note",
+      "model": "note"
+    },
+    "pk": 80,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "app_label": "recette",
+      "name": "commentaire",
+      "model": "commentaire"
+    },
+    "pk": 81,
+    "model": "contenttypes.contenttype"
+  },
+  {
+    "fields": {
+      "session_data": "NGI1ODE4MWMyZDE2ZTI0OTJkMTEyZGIyZGM5NGRhYmEyNTRlMDg2Nzp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6NTUsIl9hdXRoX3VzZXJfaGFzaCI6ImE1N2M4Njg1MDk4Y2E2NTNhMGFjYmQxNzdlZDIwNWRmMzRkNThjMWUifQ==",
+      "expire_date": "2015-06-17T19:44:07.336Z"
+    },
+    "pk": "qzohckpp8fmnzqtiyiaio8kjxwh25vip",
+    "model": "sessions.session"
+  },
+  {
+    "fields": {
+      "image": "photos_recettes/lasagne-1.jpg",
+      "recette": 127
+    },
+    "pk": 13,
+    "model": "recette.photo"
+  },
+  {
+    "fields": {
+      "image": "photos_recettes/lasagne-2.jpg",
+      "recette": 127
+    },
+    "pk": 14,
+    "model": "recette.photo"
+  },
+  {
+    "fields": {
+      "nom": "p\u00e2te \u00e0 lasagnes",
+      "quantite": "1/2 paquet",
+      "recette": 127
+    },
+    "pk": 71,
+    "model": "recette.ingredient"
+  },
+  {
+    "fields": {
+      "nom": "oignon",
+      "quantite": "1",
+      "recette": 127
+    },
+    "pk": 72,
+    "model": "recette.ingredient"
+  },
+  {
+    "fields": {
+      "nom": "chair a saucisse",
+      "quantite": "150 g",
+      "recette": 127
+    },
+    "pk": 73,
+    "model": "recette.ingredient"
+  },
+  {
+    "fields": {
+      "detail": "ffsefsef\r\n",
+      "recette": null
+    },
+    "pk": 24,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ffsefsef\r\n",
+      "recette": null
+    },
+    "pk": 26,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ffsefsef\r\n",
+      "recette": null
+    },
+    "pk": 28,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "fqef",
+      "recette": 95
+    },
+    "pk": 29,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ihnk",
+      "recette": 95
+    },
+    "pk": 30,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ijk",
+      "recette": 95
+    },
+    "pk": 31,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "fqef",
+      "recette": 96
+    },
+    "pk": 32,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ihnk",
+      "recette": 96
+    },
+    "pk": 33,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ijk",
+      "recette": 96
+    },
+    "pk": 34,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "j",
+      "recette": 97
+    },
+    "pk": 35,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ii,",
+      "recette": 97
+    },
+    "pk": 36,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "k",
+      "recette": 97
+    },
+    "pk": 37,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "j",
+      "recette": 98
+    },
+    "pk": 38,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ii,",
+      "recette": 98
+    },
+    "pk": 39,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "k",
+      "recette": 98
+    },
+    "pk": 40,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "j",
+      "recette": 99
+    },
+    "pk": 41,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ii,",
+      "recette": 99
+    },
+    "pk": 42,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "k",
+      "recette": 99
+    },
+    "pk": 43,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "k",
+      "recette": 102
+    },
+    "pk": 44,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "k",
+      "recette": 102
+    },
+    "pk": 45,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "k",
+      "recette": 102
+    },
+    "pk": 46,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "l",
+      "recette": 103
+    },
+    "pk": 47,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "l",
+      "recette": 103
+    },
+    "pk": 48,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "l",
+      "recette": 103
+    },
+    "pk": 49,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "p",
+      "recette": 109
+    },
+    "pk": 65,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "p",
+      "recette": 109
+    },
+    "pk": 66,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "p",
+      "recette": 109
+    },
+    "pk": 67,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "p",
+      "recette": 110
+    },
+    "pk": 68,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "p",
+      "recette": 110
+    },
+    "pk": 69,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "p",
+      "recette": 110
+    },
+    "pk": 70,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "l",
+      "recette": 111
+    },
+    "pk": 71,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "l",
+      "recette": 111
+    },
+    "pk": 72,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "l",
+      "recette": 111
+    },
+    "pk": 73,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ji",
+      "recette": 112
+    },
+    "pk": 74,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ji",
+      "recette": 112
+    },
+    "pk": 75,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "ji",
+      "recette": 112
+    },
+    "pk": 76,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "Laver et hacher finement l'oignon, la carotte et la branche de c\u00e9leri (en ayant pris soin d'en retirer les feuilles que l'on r\u00e9serve pour plus tard).",
+      "recette": 127
+    },
+    "pk": 77,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "Dans une marmite ou une cocotte, verser un fond d'huile d'olive et y ajouter la moiti\u00e9 du m\u00e9lange pr\u00e9alablement pr\u00e9par\u00e9, puis y ajouter toute la tomate.",
+      "recette": 127
+    },
+    "pk": 78,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "Ajouter ensuite un bouquet constitu\u00e9 des feuilles de c\u00e9leri et de deux branches de basilic enti\u00e8res, bouquet que l'on retirera en fin de cuisson de la sauce",
+      "recette": 127
+    },
+    "pk": 79,
+    "model": "recette.etape"
+  },
+  {
+    "fields": {
+      "detail": "Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. Je suis la description de la cat\u00e9gorie plat. ",
+      "label": "Les plats",
+      "title": "Les plats"
+    },
+    "pk": 7,
+    "model": "recette.type"
+  },
+  {
+    "fields": {
+      "detail": "Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. Je suis la description de la cat\u00e9gorie apero. ",
+      "label": "L'apero !",
+      "title": "apero"
+    },
+    "pk": 8,
+    "model": "recette.type"
+  },
+  {
+    "fields": {
+      "detail": "Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. Je suis la description de la cat\u00e9gorie entr\u00e9es. ",
+      "label": "Les entr\u00e9es",
+      "title": "Les entr\u00e9es"
+    },
+    "pk": 9,
+    "model": "recette.type"
+  },
+  {
+    "fields": {
+      "detail": "Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. Je suis la description de la cat\u00e9gorie dessert. ",
+      "label": "Les desserts",
+      "title": "Les dessert"
+    },
+    "pk": 10,
+    "model": "recette.type"
+  },
+  {
+    "fields": {"text": "Tr\u00e9s facile"},
+    "pk": 15,
+    "model": "recette.difficulte"
+  },
+  {
+    "fields": {"text": "Facile"},
+    "pk": 16,
+    "model": "recette.difficulte"
+  },
+  {
+    "fields": {"text": "Moyen"},
+    "pk": 17,
+    "model": "recette.difficulte"
+  },
+  {
+    "fields": {"text": "Difficile"},
+    "pk": 18,
+    "model": "recette.difficulte"
+  },
+  {
+    "fields": {"text": "Tr\u00e9s difficile"},
+    "pk": 19,
+    "model": "recette.difficulte"
+  },
+  {
+    "fields": {
+      "content_type": 68,
+      "codename": "add_logentry",
+      "name": "Can add log entry"
+    },
+    "pk": 202,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 68,
+      "codename": "change_logentry",
+      "name": "Can change log entry"
+    },
+    "pk": 203,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 68,
+      "codename": "delete_logentry",
+      "name": "Can delete log entry"
+    },
+    "pk": 204,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 69,
+      "codename": "add_permission",
+      "name": "Can add permission"
+    },
+    "pk": 205,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 69,
+      "codename": "change_permission",
+      "name": "Can change permission"
+    },
+    "pk": 206,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 69,
+      "codename": "delete_permission",
+      "name": "Can delete permission"
+    },
+    "pk": 207,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 70,
+      "codename": "add_group",
+      "name": "Can add group"
+    },
+    "pk": 208,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 70,
+      "codename": "change_group",
+      "name": "Can change group"
+    },
+    "pk": 209,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 70,
+      "codename": "delete_group",
+      "name": "Can delete group"
+    },
+    "pk": 210,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 71,
+      "codename": "add_user",
+      "name": "Can add user"
+    },
+    "pk": 211,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 71,
+      "codename": "change_user",
+      "name": "Can change user"
+    },
+    "pk": 212,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 71,
+      "codename": "delete_user",
+      "name": "Can delete user"
+    },
+    "pk": 213,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 72,
+      "codename": "add_contenttype",
+      "name": "Can add content type"
+    },
+    "pk": 214,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 72,
+      "codename": "change_contenttype",
+      "name": "Can change content type"
+    },
+    "pk": 215,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 72,
+      "codename": "delete_contenttype",
+      "name": "Can delete content type"
+    },
+    "pk": 216,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 73,
+      "codename": "add_session",
+      "name": "Can add session"
+    },
+    "pk": 217,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 73,
+      "codename": "change_session",
+      "name": "Can change session"
+    },
+    "pk": 218,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 73,
+      "codename": "delete_session",
+      "name": "Can delete session"
+    },
+    "pk": 219,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 74,
+      "codename": "add_photo",
+      "name": "Can add photo"
+    },
+    "pk": 220,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 74,
+      "codename": "change_photo",
+      "name": "Can change photo"
+    },
+    "pk": 221,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 74,
+      "codename": "delete_photo",
+      "name": "Can delete photo"
+    },
+    "pk": 222,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 75,
+      "codename": "add_ingredient",
+      "name": "Can add ingredient"
+    },
+    "pk": 223,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 75,
+      "codename": "change_ingredient",
+      "name": "Can change ingredient"
+    },
+    "pk": 224,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 75,
+      "codename": "delete_ingredient",
+      "name": "Can delete ingredient"
+    },
+    "pk": 225,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 76,
+      "codename": "add_etape",
+      "name": "Can add etape"
+    },
+    "pk": 226,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 76,
+      "codename": "change_etape",
+      "name": "Can change etape"
+    },
+    "pk": 227,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 76,
+      "codename": "delete_etape",
+      "name": "Can delete etape"
+    },
+    "pk": 228,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 77,
+      "codename": "add_type",
+      "name": "Can add type"
+    },
+    "pk": 229,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 77,
+      "codename": "change_type",
+      "name": "Can change type"
+    },
+    "pk": 230,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 77,
+      "codename": "delete_type",
+      "name": "Can delete type"
+    },
+    "pk": 231,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 78,
+      "codename": "add_difficulte",
+      "name": "Can add difficulte"
+    },
+    "pk": 232,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 78,
+      "codename": "change_difficulte",
+      "name": "Can change difficulte"
+    },
+    "pk": 233,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 78,
+      "codename": "delete_difficulte",
+      "name": "Can delete difficulte"
+    },
+    "pk": 234,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 79,
+      "codename": "add_recette",
+      "name": "Can add recette"
+    },
+    "pk": 235,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 79,
+      "codename": "change_recette",
+      "name": "Can change recette"
+    },
+    "pk": 236,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 79,
+      "codename": "delete_recette",
+      "name": "Can delete recette"
+    },
+    "pk": 237,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 80,
+      "codename": "add_note",
+      "name": "Can add note"
+    },
+    "pk": 238,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 80,
+      "codename": "change_note",
+      "name": "Can change note"
+    },
+    "pk": 239,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 80,
+      "codename": "delete_note",
+      "name": "Can delete note"
+    },
+    "pk": 240,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 81,
+      "codename": "add_commentaire",
+      "name": "Can add commentaire"
+    },
+    "pk": 241,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 81,
+      "codename": "change_commentaire",
+      "name": "Can change commentaire"
+    },
+    "pk": 242,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "content_type": 81,
+      "codename": "delete_commentaire",
+      "name": "Can delete commentaire"
+    },
+    "pk": 243,
+    "model": "auth.permission"
+  },
+  {
+    "fields": {
+      "user_permissions": [],
+      "last_login": "2015-06-03T19:44:07Z",
+      "is_staff": true,
+      "password": "pbkdf2_sha256$15000$K0vP8jdnyC96$CWwIDhgeeBqGI1rGrPFn4zEDbAJRnYsNQxNKzo5jQwM=",
+      "is_superuser": true,
+      "first_name": "Stephen",
+      "date_joined": "2015-06-01T20:24:40Z",
+      "is_active": true,
+      "last_name": "Valentin",
+      "username": "valentin",
+      "groups": [],
+      "email": "Stephen.valentin@yopmail.com"
+    },
+    "pk": 55,
+    "model": "auth.user"
+  },
+  {
+    "fields": {
+      "user_permissions": [],
+      "last_login": "2015-06-01T21:20:11.308Z",
+      "is_staff": false,
+      "password": "pbkdf2_sha256$15000$miv3SZplJ70p$pjCf8DLpgGtxoKosn0I3v4lNU9t9hOc8va2ot7dv8sY=",
+      "is_superuser": false,
+      "first_name": "Stephen",
+      "date_joined": "2015-06-01T21:20:05.101Z",
+      "is_active": true,
+      "last_name": "Valentin",
+      "username": "stephen",
+      "groups": [],
+      "email": "valentin.stephen@gmail.com"
+    },
+    "pk": 56,
+    "model": "auth.user"
+  },
+  {
+    "fields": {
+      "user_permissions": [],
+      "last_login": "2015-06-03T19:42:26.315Z",
+      "is_staff": false,
+      "password": "pbkdf2_sha256$15000$YOdZEptnAaG3$Z0d6kjX2Dg54Ld0gnww5GmsP/xg9FEe49u6rYI2cSmU=",
+      "is_superuser": false,
+      "first_name": "John",
+      "date_joined": "2015-06-03T19:42:20.917Z",
+      "is_active": true,
+      "last_name": "Carter",
+      "username": "john",
+      "groups": [],
+      "email": "john@yopmail.com"
+    },
+    "pk": 57,
+    "model": "auth.user"
+  },
+  {
+    "fields": {
+      "user": 55,
+      "type": 7,
+      "cout": 10.0,
+      "difficulte": 15,
+      "temps_preparation": 43,
+      "titre": "Lasagnes",
+      "temps_repos": 2,
+      "temps_cuisson": 20
+    },
+    "pk": 127,
+    "model": "recette.recette"
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "user": 55,
+      "change_message": "",
+      "content_type": 77,
+      "object_repr": "plat",
+      "action_time": "2015-06-01T21:47:22.423Z",
+      "object_id": "6"
+    },
+    "pk": 143,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "user": 55,
+      "change_message": "",
+      "content_type": 78,
+      "object_repr": "Facile",
+      "action_time": "2015-06-01T21:47:35.001Z",
+      "object_id": "14"
+    },
+    "pk": 144,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "",
+      "action_time": "2015-06-01T21:48:13.855Z",
+      "object_id": "5"
+    },
+    "pk": 145,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Lasagnes",
+      "action_time": "2015-06-01T21:48:13.868Z",
+      "object_id": "4"
+    },
+    "pk": 146,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "",
+      "action_time": "2015-06-01T21:48:13.876Z",
+      "object_id": "3"
+    },
+    "pk": 147,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "",
+      "action_time": "2015-06-01T21:48:13.884Z",
+      "object_id": "2"
+    },
+    "pk": 148,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "",
+      "action_time": "2015-06-01T21:48:13.892Z",
+      "object_id": "1"
+    },
+    "pk": 149,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "",
+      "action_time": "2015-06-01T21:48:25.389Z",
+      "object_id": "6"
+    },
+    "pk": 150,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "",
+      "action_time": "2015-06-01T21:53:18.152Z",
+      "object_id": "10"
+    },
+    "pk": 151,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "",
+      "action_time": "2015-06-01T21:53:18.234Z",
+      "object_id": "9"
+    },
+    "pk": 152,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "",
+      "action_time": "2015-06-01T21:53:18.242Z",
+      "object_id": "8"
+    },
+    "pk": 153,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "",
+      "action_time": "2015-06-01T21:53:18.251Z",
+      "object_id": "7"
+    },
+    "pk": 154,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "qkfk",
+      "action_time": "2015-06-02T22:42:03.538Z",
+      "object_id": "87"
+    },
+    "pk": 155,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Tatat",
+      "action_time": "2015-06-02T22:42:03.554Z",
+      "object_id": "79"
+    },
+    "pk": 156,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Mozza",
+      "action_time": "2015-06-02T22:42:03.573Z",
+      "object_id": "78"
+    },
+    "pk": 157,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Mozza",
+      "action_time": "2015-06-02T22:42:03.587Z",
+      "object_id": "77"
+    },
+    "pk": 158,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Mozza",
+      "action_time": "2015-06-02T22:42:03.601Z",
+      "object_id": "76"
+    },
+    "pk": 159,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Brownies",
+      "action_time": "2015-06-02T22:42:03.607Z",
+      "object_id": "75"
+    },
+    "pk": 160,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Brownies",
+      "action_time": "2015-06-02T22:42:03.616Z",
+      "object_id": "74"
+    },
+    "pk": 161,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "qdqzd",
+      "action_time": "2015-06-02T22:42:03.624Z",
+      "object_id": "70"
+    },
+    "pk": 162,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "qdqzd",
+      "action_time": "2015-06-02T22:42:03.631Z",
+      "object_id": "68"
+    },
+    "pk": 163,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "cqdzd",
+      "action_time": "2015-06-02T22:42:03.639Z",
+      "object_id": "65"
+    },
+    "pk": 164,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "qdqzd",
+      "action_time": "2015-06-02T22:42:03.647Z",
+      "object_id": "62"
+    },
+    "pk": 165,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "dizdja ",
+      "action_time": "2015-06-02T22:42:03.654Z",
+      "object_id": "58"
+    },
+    "pk": 166,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "dizdja ",
+      "action_time": "2015-06-02T22:42:03.662Z",
+      "object_id": "56"
+    },
+    "pk": 167,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "dqdqzd",
+      "action_time": "2015-06-02T22:42:03.670Z",
+      "object_id": "53"
+    },
+    "pk": 168,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "dqdqzd",
+      "action_time": "2015-06-02T22:42:03.679Z",
+      "object_id": "51"
+    },
+    "pk": 169,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "dqdqzd",
+      "action_time": "2015-06-02T22:42:03.686Z",
+      "object_id": "49"
+    },
+    "pk": 170,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "fzifnzoef",
+      "action_time": "2015-06-02T22:42:03.693Z",
+      "object_id": "44"
+    },
+    "pk": 171,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "k,fzkef",
+      "action_time": "2015-06-02T22:42:03.708Z",
+      "object_id": "40"
+    },
+    "pk": 172,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "k,fzkef",
+      "action_time": "2015-06-02T22:42:03.720Z",
+      "object_id": "38"
+    },
+    "pk": 173,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Cane",
+      "action_time": "2015-06-02T22:42:03.735Z",
+      "object_id": "34"
+    },
+    "pk": 174,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Pizza",
+      "action_time": "2015-06-02T22:42:03.748Z",
+      "object_id": "29"
+    },
+    "pk": 175,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Pizza",
+      "action_time": "2015-06-02T22:42:03.762Z",
+      "object_id": "27"
+    },
+    "pk": 176,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Lasagne",
+      "action_time": "2015-06-02T22:42:03.775Z",
+      "object_id": "20"
+    },
+    "pk": 177,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Lasagne",
+      "action_time": "2015-06-02T22:42:03.793Z",
+      "object_id": "19"
+    },
+    "pk": 178,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 3,
+      "user": 55,
+      "change_message": "",
+      "content_type": 79,
+      "object_repr": "Lasagnes",
+      "action_time": "2015-06-02T22:42:03.814Z",
+      "object_id": "18"
+    },
+    "pk": 179,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "user": 55,
+      "change_message": "",
+      "content_type": 78,
+      "object_repr": "Tr\u00e9s facile",
+      "action_time": "2015-06-03T19:44:15.689Z",
+      "object_id": "15"
+    },
+    "pk": 180,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "user": 55,
+      "change_message": "",
+      "content_type": 78,
+      "object_repr": "Facile",
+      "action_time": "2015-06-03T19:44:21.139Z",
+      "object_id": "16"
+    },
+    "pk": 181,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "user": 55,
+      "change_message": "",
+      "content_type": 78,
+      "object_repr": "Moyen",
+      "action_time": "2015-06-03T19:44:25.478Z",
+      "object_id": "17"
+    },
+    "pk": 182,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "user": 55,
+      "change_message": "",
+      "content_type": 78,
+      "object_repr": "Difficile",
+      "action_time": "2015-06-03T19:44:31.811Z",
+      "object_id": "18"
+    },
+    "pk": 183,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "user": 55,
+      "change_message": "",
+      "content_type": 78,
+      "object_repr": "Tr\u00e9s difficile",
+      "action_time": "2015-06-03T19:44:38.102Z",
+      "object_id": "19"
+    },
+    "pk": 184,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "user": 55,
+      "change_message": "",
+      "content_type": 77,
+      "object_repr": "Les plats",
+      "action_time": "2015-06-03T19:45:37.567Z",
+      "object_id": "7"
+    },
+    "pk": 185,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "user": 55,
+      "change_message": "",
+      "content_type": 77,
+      "object_repr": "apero",
+      "action_time": "2015-06-03T19:46:02.646Z",
+      "object_id": "8"
+    },
+    "pk": 186,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "user": 55,
+      "change_message": "",
+      "content_type": 77,
+      "object_repr": "Les entr\u00e9es",
+      "action_time": "2015-06-03T19:46:25.847Z",
+      "object_id": "9"
+    },
+    "pk": 187,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "user": 55,
+      "change_message": "",
+      "content_type": 77,
+      "object_repr": "Les dessert",
+      "action_time": "2015-06-03T19:46:50.045Z",
+      "object_id": "10"
+    },
+    "pk": 188,
+    "model": "admin.logentry"
+  },
+  {
+    "fields": {
+      "action_flag": 2,
+      "user": 55,
+      "change_message": "Modifi\u00e9 first_name, last_name et email.",
+      "content_type": 71,
+      "object_repr": "valentin",
+      "action_time": "2015-06-03T19:50:56.418Z",
+      "object_id": "55"
+    },
+    "pk": 189,
+    "model": "admin.logentry"
+  }
+]
