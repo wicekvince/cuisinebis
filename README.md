@@ -2,11 +2,11 @@
 
 **Modèles :**
 Tout les type d'objets sont relié par une Foreign Key a une recette
-Exemple : Une étapes
 
 **Installation :**
+
 -procédure pour le chargement des données initial  :
-  >python manage.py loaddata data
+ >python manage.py loaddata data
 
 **Compte utilisateur :**
 
