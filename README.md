@@ -13,4 +13,4 @@ Tout les type d'objets sont relié par une Foreign Key a une recette
  1.  LOGIN : john  PASSWORD : john (utilisateur invité avec trois recettes)
  2.  LOGIN : admin PASSWORD : admin (superuser)
 
-Pour posté une recette, une note ou un commentaire vous devez être connecter
+Pour poster une recette, une note ou un commentaire vous devez être connecter
