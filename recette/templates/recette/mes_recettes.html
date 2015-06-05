@@ -29,7 +29,7 @@
                     <td><a href="{% url 'recette:recette' result.id %}">{{ result.titre }}</a></td>
                     <td>{{ result.difficulte }}</td>
                     <td>{% if result.moyenne_note.note__avg %}{{ result.moyenne_note.note__avg|floatformat:"2" }}{% else %}Pas de notes{% endif %}</td>
-                    <td>{{ result.temps_preparation }}</td>
+                    <td>{{ result.temps_preparation }} minutes</td>
                     <td class="link modify"><a href="{% url 'recette:modify_recette' result.id %}">Modifier</a></td>
                     <td class="link supr"><a href="{% url 'recette:supprimerrecette' result.id %}">Supprimer</a></td>
                 </tr>

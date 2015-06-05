@@ -19,8 +19,8 @@
                     {% show_nb_recette %}
                     <div class="user-infos">
                         {% if user.is_authenticated %}
-                            {{ user.last_name }}
                             {{ user.first_name }}
+                            {{ user.last_name }}
                         {% else %}
                             Connectez-vous !
                         {% endif %}
