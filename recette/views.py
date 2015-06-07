@@ -20,7 +20,7 @@ TYPE_CHOICES = ['1','2','3','4'];
 
 def index(request):
 
-    recettes = Recette.objects.all();
+    recettes = Recette.objects.all().order_by('-id');
     typeObjet=None
     if request.method == 'GET':
         if request.GET.get('type'):
@@ -166,19 +166,22 @@ def modifyRecette(request, id):
     if request.method == 'POST':
         form = RecetteForm(request.POST)
         if form.is_valid():
-            recette = form.save();
-            recette.id = id
+            recette.type_id = form.cleaned_data['type']
+            recette.titre = form.cleaned_data['titre']
+            recette.cout = form.cleaned_data['cout']
+            recette.difficulte = form.cleaned_data['difficulte']
+            recette.temps_preparation = form.cleaned_data['temps_preparation']
+            recette.temps_cuisson = form.cleaned_data['temps_cuisson']
+            recette.temps_repos = form.cleaned_data['temps_repos']
             recette.user = request.user
             recette.save()
+
             results = Recette.objects.filter(user_id=request.user.id)
-            IngredientForm = ingredientFormSetCustom(request.POST)
-            if IngredientForm.is_valid():
-                IngredientForm.save()
-                contexte = {
-                    'results': results,
-                    'success_message':'success'
-                }
-                return render(request, 'recette/mes_recettes.html', contexte)
+            contexte = {
+                'results': results,
+                'success_message':'success'
+            }
+            return render(request, 'recette/mes_recettes.html', contexte)
 
     return render(request, "recette/modify-recette.html", {
         'recette': recette,

@@ -31,6 +31,6 @@ Contenu :
 
 #BILAN
 
-Toutes les fonctionnalités sont réalisées, à quelques exceptions pres:
+Toutes les fonctionnalités sont réalisées, à quelques exceptions près:
 - Sur la création d'une recette, nous n'avons pas fait le bouton javascript permettant d'ajouter de nouveaux éléments (Ingrédients, Photos, Etapes)
-- La modification est présente mais n'est pas totalement fonctionnelle.
+- La modification fontionne mais uniquement pour l'objet recette

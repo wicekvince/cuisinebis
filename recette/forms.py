@@ -17,9 +17,9 @@ class EtapeCustomForm(forms.ModelForm):
         model = Etape
 
 
-IngredientFormset = inlineformset_factory(Recette, Ingredient)
-EtapeFormset = inlineformset_factory(Recette, Etape,form=EtapeCustomForm)
-ImageFormset = inlineformset_factory(Recette, Photo)
+IngredientFormset = inlineformset_factory(Recette, Ingredient,can_delete=False)
+EtapeFormset = inlineformset_factory(Recette, Etape,form=EtapeCustomForm,can_delete=False)
+ImageFormset = inlineformset_factory(Recette, Photo,can_delete=False)
 
 
 class NoteForm(forms.ModelForm):
