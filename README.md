@@ -1,7 +1,7 @@
 #Projet django site de recettes de cuisine
 
 ### Thème
-Le thème & été realisé from scratch, utilisation de bootstrap, fancybox et jquery
+Le thème a été realisé from scratch, utilisation de bootstrap, fancybox et jquery
 
 ###Modèles :
 
@@ -10,7 +10,7 @@ L'objet recette à 3 foreign key :
 - la difficulte (Facile,...)
 - l'user
 
-La recette contient 1 une plusieur ingrédient, photos, notes, commentaires et étapes.
+La recette contient 1 une plusieurs ingrédients, photos, notes, commentaires et étapes.
 Les objets note et commentaire ont une foreign key vers l'user.
 
 ###Installation des données :
@@ -24,7 +24,7 @@ Contenu :
 
 ###Compte utilisateur :
 
- Les mot de passe des utilisateurs sont égales aux identifiants
+ Les mot de passe des utilisateurs sont égaux aux identifiants
  Il y a 2 superuser :
  - Login : admin, mot de passe : admin
  - Login : valentin, mot de passe : valentin
@@ -32,5 +32,5 @@ Contenu :
 #BILAN
 
 Toutes les fonctionnalités sont réalisées, à quelques exceptions pres:
-- Sur la création d'une recette, nous n'avons pas fait le bouton javascript permettant d'ajouter de nouveaux éléments (Ingrédient, Photos, Etapes)
-- La modification à quelques soucis
+- Sur la création d'une recette, nous n'avons pas fait le bouton javascript permettant d'ajouter de nouveaux éléments (Ingrédients, Photos, Etapes)
+- La modification est présente mais n'est pas totalement fonctionnelle.
