@@ -15,9 +15,9 @@ Les objets note et commentaire ont une foreign key vers l'user.
 
 ###Installation des données :
 
-> python manage.py loaddata data
+> python manage.py loaddata data.json
 
-Contenu :
+Contenu (340 objets) :
 - 5 difficultés
 - 4 types de recette
 - Des utilisateurs, recettes, notes et commentaires
